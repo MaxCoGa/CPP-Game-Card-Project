@@ -7,34 +7,29 @@
 #include "Reward.h"
 using namespace std;
 
-
+class Reward;
 
 class Player {
-	string name;
-	string side;
-	int nRubies;
-	bool activeStatus, displayMode;
+	private:
+		string name;
+		char boardSide;
+		int rubies;
+		bool status;
+		static bool ENDGAME;
+	public:
+		Player(string nameIn);
+		Player(string nameIn, int playerNumber);
 
-public:
-	Player() :name("no name"), nRubies(0), side("up"), activeStatus(false) {}
-	Player(string name, string side) : name{ name }, side{ side }, nRubies{ 0 }, activeStatus{ false }, displayMode{ false } {}
 
+		string getName() const;
+		void setActive(bool s);
+		bool isActive() const;
+		int getNRubies() const;
+		void addReward(const Reward&);
+		void setDisplayMode(bool endOfGame);
 
-	string getName() {
-		return name;
-	}
-	void setActive(bool status) {
-		activeStatus = status;
-	}
-	bool isActive() { return activeStatus; }
-	int getNRubies() { return nRubies; }
-	void addReward(const Reward& aReward) {}	//TO DO //countNRubies += aReward.count;
-
-	void setDisplayMode(bool endOfGame) {
-		displayMode = endOfGame;
-	}
-
-	friend ostream& operator<<(ostream& os, const Player& dt);
+		
+		friend ostream& operator<<(ostream&, const Player&);
 };
 
 
