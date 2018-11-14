@@ -11,26 +11,18 @@ private:
 	FaceAnimal animal;
 	FaceBackground background;
 	int nRow = 3;
-	char ani, back;
-	string cardView[3];
-	Card(FaceAnimal a, FaceBackground b) : animal(a), background(b) {
-		setCharAnimal(a);
-		setCharBackground(b);
-		for (int i = 0; i < nRow; i++) {
-			if (i == 1) {
-				cardView[i] = back + ani + back;
-			}
-			else
-			{
-				cardView[i] = back + back + back;
-			}
-		}
-	}
+	char face, colour;
+
+	Card(char face_animal, char colour_background);
 
 public:
+	string row(int row);
 	int getNRows() const { return nRow; }
+
 	void setCharAnimal(FaceAnimal);
 	void setCharBackground(FaceBackground);
+	
+	void print();
 };
 
 #endif 
