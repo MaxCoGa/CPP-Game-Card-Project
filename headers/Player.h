@@ -5,31 +5,32 @@
 #include <string>
 #include <iostream>
 #include "Reward.h"
-using namespace std;
+//using namespace std;
+enum Side{top,bot,right,left};//Grille top,bot,right,left
 
-class Reward;
 
 class Player {
 	private:
-		string name;
-		char boardSide;
-		int rubies;
-		bool status;
-		static bool ENDGAME;
+		string _name;//nom du joueur
+		Side _boardSide;//utilise l'enum Side
+		int _rubies;//nombre de rubie d'un joueur
+		bool _active;//statut d'un joueur(a son tour de jouer ou non)
+		bool _endOfGame;//partie terminé ou non
 	public:
-		Player(string nameIn);
-		Player(string nameIn, int playerNumber);
+		Player(string, Side);//constructeur a 2 arguments avec nom du joueur et son cote du board
+		~Player();//destructeur
 
 
 		string getName() const;
-		void setActive(bool s);
-		bool isActive() const;
+		void setActive(bool);
+		bool isActive();
 		int getNRubies() const;
 		void addReward(const Reward&);
-		void setDisplayMode(bool endOfGame);
+		void setDisplayMode(bool);
 
-		
-		friend ostream& operator<<(ostream&, const Player&);
+		Side getSide() const;
+
+		friend std::ostream& operator<<(std::ostream&, const Player&);
 };
 
 
