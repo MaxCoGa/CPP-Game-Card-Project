@@ -12,9 +12,9 @@ enum CardSide {FACE,BACK='Z'};
 class Board{
 	friend std::ostream& operator<<(std::ostream &os, const Board &b);
     static const int rows = 5, cols = 5;
-	std::string matrix[21]; //output "screen"
-	Card* cardmatrix[rows][cols]; //cards
-	CardSide cardSide[rows][cols]; //enum: DOWN, UP
+	std::string matrix[21]; //ecran meme
+	Card* cardmatrix[rows][cols]; //les cartes
+	CardSide cardSide[rows][cols]; //le cote d'une carte
 
 public:
 	Board() = default;
