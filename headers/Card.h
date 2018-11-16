@@ -6,7 +6,7 @@ enum FaceAnimal { Crab='C', Penguin='P', Octopus='O', Walrus='W', Turtle='T' };
 enum FaceBackground { Red='R', Green='G', Purple='P', Blue='B', Yellow='Y' };
 
 class Card {
-	friend class Deck;
+	friend class CardDeck;
 private:
 	FaceAnimal _animal;
 	FaceBackground _background;
@@ -20,7 +20,10 @@ private:
 public:
 	//string row(int row);
 	//int getNRows() const { return nRow; }
-
+	/*Card(FaceAnimal animal, FaceBackground background):
+		_animal(animal), _background(background)
+		{}*/
+		
 	void getAnimal(FaceAnimal) const;//inline au lieu de void?
 	void getBackground(FaceBackground) const;//inline au lieu de void?
 	
