@@ -2,7 +2,7 @@
 #define BOARD_H
 
 #include <iostream>
-#include "CardDEck.h"
+#include "CardDeck.h"
 
 
 enum Letter { A, B, C, D, E};
@@ -10,8 +10,9 @@ enum Number { I, II, III, IV, V };
 
 class Board{
 	friend std::ostream& operator<<(std::ostream &os, const Board &b);
+    std::string lines[5];
 public:
-	Board();
+	Board() = default;
 	virtual ~Board();
 	Board(const Board&) = delete;
 	Board& operator=(const Board&) = delete;
