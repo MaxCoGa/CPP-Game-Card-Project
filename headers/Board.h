@@ -14,7 +14,7 @@ class Board{
     static const int rows = 5, cols = 5;
 	std::string matrix[21]; //output "screen"
 	Card* cardmatrix[rows][cols]; //cards
-	CardSide cardOrientation[rows][cols]; //enum: DOWN, UP
+	CardSide cardSide[rows][cols]; //enum: DOWN, UP
 
 public:
 	Board() = default;
