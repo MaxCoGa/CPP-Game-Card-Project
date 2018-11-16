@@ -5,10 +5,20 @@
 
 class Reward{
 private:
-	Reward();
+	int _number;
+	Reward(int number);
 public:
-	friend std::ostream &operator << (std::ostream &out, const Reward &r);
+	Reward(int number);
+	friend class RewardDeck;
+	//utilise pour RewardDeck
+	Reward(const Reward&) = delete;
+	Reward& operator=(const Reward&) = delete;
+	//
 
+	friend std::ostream &operator << (std::ostream &os, const Reward &r);
+	operator int()const{//utilise pour add au rubie d'un joueur
+		return _number;
+	}
 };
 
 #endif
