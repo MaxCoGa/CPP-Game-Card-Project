@@ -28,7 +28,7 @@ int Player::getNRubies() const{
 }
 
 void Player::addReward(const Reward& reward){
-	_rubies += reward;
+	_rubies += reward;//besoins de faire un operator int() dans reward.h
 }
 
 void Player::setDisplayMode(bool endOfGame){
