@@ -6,7 +6,6 @@ std::vector<Card*> CardDeck::deck;
 
 CardDeck& CardDeck::make_CardDeck() {
 	CardDeck* cd = new CardDeck();
-	//5 animals, 5 colours
 	for (auto colour : { FaceBackground::Blue, FaceBackground::Green, FaceBackground::Purple, FaceBackground::Red, FaceBackground::Yellow }) {
 		for (auto animal : { FaceAnimal::Crab, FaceAnimal::Octopus, FaceAnimal::Penguin, FaceAnimal::Turtle, FaceAnimal::Walrus }) {
 			deck.push_back(new Card(animal, colour));
