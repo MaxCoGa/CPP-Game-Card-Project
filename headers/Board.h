@@ -7,10 +7,15 @@
 
 enum Letter { A, B, C, D, E};
 enum Number { I, II, III, IV, V };
+enum CardSide {FACE,BACK='Z'};
 
 class Board{
 	friend std::ostream& operator<<(std::ostream &os, const Board &b);
-    std::string lines[5];
+    static const int rows = 5, cols = 5;
+	std::string matrix[21]; //output "screen"
+	Card* cardmatrix[rows][cols]; //cards
+	CardSide cardOrientation[rows][cols]; //enum: DOWN, UP
+
 public:
 	Board() = default;
 	virtual ~Board();
