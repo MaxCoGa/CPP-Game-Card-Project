@@ -39,12 +39,12 @@ Side Player::getSide() const{
 	return _boardSide;
 }
 
-
+//joueur imprimable a l'ecran avec ca
 std::ostream & operator<<(std::ostream & os, const Player & m){
-	if (!m._endOfGame) {
+	if (!m._endOfGame) {//si faux
 		os << m._name << ": " << sideArray[m._boardSide] << " (active) \n";
 	}
-	else {
+	else {//sinon
 		os << m._name << ": " << m._rubies << " rubies \n";
 	}
 
