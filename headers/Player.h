@@ -6,22 +6,24 @@
 #include <iostream>
 #include "Reward.h"
 //using namespace std;
+const std::string sideArray[] = {"top","bot","left","right"};
 enum Side{top,bot,right,left};//Grille top,bot,right,left
+
 
 
 class Player {
 	private:
-		string _name;//nom du joueur
+		std::string _name;//nom du joueur
 		Side _boardSide;//utilise l'enum Side
 		int _rubies;//nombre de rubie d'un joueur
 		bool _active;//statut d'un joueur(a son tour de jouer ou non)
 		bool _endOfGame;//partie terminé ou non
 	public:
-		Player(string, Side);//constructeur a 2 arguments avec nom du joueur et son cote du board
+		Player(std::string, Side);//constructeur a 2 arguments avec nom du joueur et son cote du board
 		~Player();//destructeur
 
 
-		string getName() const;
+		std::string getName() const;
 		void setActive(bool);
 		bool isActive();
 		int getNRubies() const;

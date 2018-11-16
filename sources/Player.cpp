@@ -1,62 +1,54 @@
 #include "Player.h"
-#include "Reward.h"
 
 #include <string>
 #include <iostream>
 
-Player::Player(string nameIn) {
-	name = nameIn;
-	boardSide = 'B';
-	rubies = 0;
-	status = true;
+Player::Player(std::string name, Side side):
+ _name(name), _boardSide(side), _rubies(0), _active(false), _endOfGame(false)
+ {}
+
+Player::~Player()
+{}
+
+std::string Player::getName() const{
+	return _name;
 }
 
-Player::Player(string nameIn, int playerNumber) {
-	name = nameIn;
-	
-	if(playerNumber == 1) {
-		boardSide = 'B';
-	} else if(playerNumber == 2) {
-		boardSide = 'T';
-	} else if(playerNumber == 3) {
-		boardSide = 'L';
-	} else {
-		boardSide = 'R';
+
+void Player::setActive(bool active){
+	_active = active;
+}
+
+bool Player::isActive(){
+	return _active;
+}
+
+int Player::getNRubies() const{
+	return _rubies;
+}
+
+void Player::addReward(const Reward& reward){
+	_rubies += reward;
+}
+
+void Player::setDisplayMode(bool endOfGame){
+	_endOfGame = endOfGame;
+}
+
+Side Player::getSide() const{
+	return _boardSide;
+}
+
+
+std::ostream & operator<<(std::ostream & os, const Player & m){
+	if (!m._endOfGame) {
+		os << m._name << ": " << sideArray[m._boardSide] << " (active) \n";
 	}
-	
-	rubies = 0;
-	status = true;
-}
-
-string Player::getName() const {
-	return name;
-}
-void Player::setActive(bool s) {
-	status = s;
-}
-bool Player::isActive() const{
-	return status;
-}
-int Player::getNRubies() const {
-	return rubies;
-}
-void Player::addReward(const Reward&) {
-	rubies = rubies + 10;
-}
-void Player::setDisplayMode(bool endOfGame) {
-	ENDGAME = endOfGame;
-}
-
-ostream& operator<<(ostream& out, const Player& p) {
-	if(Player::ENDGAME == false) {
-		if(p.isActive()){
-			out << p.getName()<<": "<<p.boardSide<<" (active)"<<endl;
-		} else {
-			out << p.getName()<<": "<<p.boardSide<<" (inactive)"<<endl;
-		}
-	} else {
-		out<<p.getName()<<": "<<p.getNRubies()<<" rubies"<<endl;
+	else {
+		os << m._name << ": " << m._rubies << " rubies \n";
 	}
-	
-	return out;
+
+	return os;
 }
+
+
