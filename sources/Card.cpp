@@ -1,22 +1,16 @@
 #include <iostream>
 #include "card.h"
 
-Card::Card( char faceIn, char colourIn) {
-	face = faceIn;
-	colour = colourIn;
-}
-
-string Card::row(int rowNum) {
-	if(rowNum == 0 || rowNum == 2) {
-		return colour<<colour<<colour;
-	} else {
-		return colour<<face<<colour;
+std::string Card::operator() (const int row) const {
+	if (row > 2) {
+		return "";
 	}
-}
-
-void Card::print() {
-	for(int row = 0; row<3; ++row) {
-		string rowString = c(row);
-		cout << rowString << endl;
+	if (row == 1) {
+		char line[] = { _background, _animal, _background, '\0' };
+		return std::string(line);
+	}
+	else {
+		char line[] = { _background, _background, _background, '\0' };
+		return std::string(line);
 	}
 }
