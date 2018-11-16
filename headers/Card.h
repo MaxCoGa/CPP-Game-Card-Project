@@ -1,10 +1,9 @@
 #ifndef CARD_H
 #define CARD_H
 #include <string>
-using namespace std;
 
-enum FaceAnimal { Crab, Penguin, Octopus, Walrus, Turtle };
-enum FaceBackground { Red, Green, Purple, Blue, Yellow };
+enum FaceAnimal { Crab='C', Penguin='P', Octopus='O', Walrus='W', Turtle='T' };
+enum FaceBackground { Red='R', Green='G', Purple='P', Blue='B', Yellow='Y' };
 
 class Card {
 	friend class Deck;
@@ -36,7 +35,7 @@ public:
 		return 3;	
 	}
 
-	string operator() (const int row) const;
+	std::string operator() (const int row) const;
 
 
 	operator FaceAnimal() const { 
