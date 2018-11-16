@@ -35,6 +35,9 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "string": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "vector": "cpp",
+        "algorithm": "cpp",
+        "iterator": "cpp"
     }
 }
