@@ -4,12 +4,13 @@
 #include <iostream>
 
 class Reward{
+	friend class RewardDeck;
 private:
 	int _number;
 	Reward(int number);
 public:
 	Reward(int number);
-	friend class RewardDeck;
+	
 	//utilise pour RewardDeck
 	Reward(const Reward&) = delete;
 	Reward& operator=(const Reward&) = delete;
