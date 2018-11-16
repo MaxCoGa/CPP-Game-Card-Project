@@ -9,7 +9,7 @@ private:
 	int _number;
 	Reward(int number);
 public:
-	Reward(int number);
+	//Reward(int number);
 	
 	//utilise pour RewardDeck
 	Reward(const Reward&) = delete;
