@@ -11,8 +11,11 @@ class CardDeck : public Deck<Card>{
         int lastCard = -1;
         CardDeck(){};
     public:
+        ~CardDeck();
         CardDeck(const CardDeck& cd) = delete;
         CardDeck& operator= (const CardDeck& cd) = delete;
+
+        
         static CardDeck& make_CardDeck();
 
         virtual void shuffle();
