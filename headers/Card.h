@@ -50,3 +50,10 @@ public:
 };
 
 #endif 
+
+/*
+Card c(Penguin, Red);
+	for (int i = 0; i < c.getNRows(); ++i) {
+		std::cout << c(i) << std::endl;
+	}
+	*/
