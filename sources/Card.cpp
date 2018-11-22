@@ -1,5 +1,5 @@
 #include <iostream>
-#include "card.h"
+#include "Card.h"
 
 std::string Card::operator() (const int row) const {
 	if (row > 2) {
@@ -13,4 +13,6 @@ std::string Card::operator() (const int row) const {
 		char line[] = { _background, _background, _background, '\0' };
 		return std::string(line);
 	}
+	
 }
+
