@@ -3,16 +3,16 @@
 #include "Game.h"
 #include "Board.h"
 
-const Card* Game::_previouscard;
-const Card* Game::_currentcard;
-std::vector<Player> Game::_player;
-Board* Game::_b;
+//const Card* Game::_previouscard;
+//const Card* Game::_currentcard;
+//std::vector<Player> Game::_player;
+//Board* Game::_b;
 
 std::ostream &operator << (std::ostream &os, const Game &g) {
-    
+
     os << g._b << std::endl;
-    
-    for (auto i : Game::_player) {
+
+    for (auto i : g._player) {
        os  << i;
     }
     return os;
@@ -57,3 +57,6 @@ Game::~Game() {
     delete _currentcard;
 }
 
+int main () {
+    return 0;
+}

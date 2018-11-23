@@ -19,12 +19,12 @@ private:
     int _round; //le nombre de tours
     
     Side _side; //le coter assigner au player
-    static std::vector<Player> _player; //vector contenant les player
+     std::vector<Player> _player; //vector contenant les player
     
-    static const Card* _previouscard;
-    static const Card* _currentcard;
+     const Card* _previouscard;
+     const Card* _currentcard;
     
-    static Board* _b;
+     Board* _b;
     
     
 public:
