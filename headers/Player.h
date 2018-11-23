@@ -6,7 +6,7 @@
 #include <iostream>
 #include "Reward.h"
 //using namespace std;
-const std::string sideArray[] = {"top","bot","left","right"};
+const std::string sideArray[] = {"top","bot","right","left"};
 enum Side{top,bot,right,left};//Grille top,bot,right,left
 
 
