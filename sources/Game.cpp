@@ -57,6 +57,3 @@ Game::~Game() {
     delete _currentcard;
 }
 
-int main () {
-    return 0;
-}
