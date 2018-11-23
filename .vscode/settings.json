@@ -38,6 +38,9 @@
         "tuple": "cpp",
         "vector": "cpp",
         "algorithm": "cpp",
-        "iterator": "cpp"
+        "iterator": "cpp",
+        "ctime": "cpp",
+        "random": "cpp",
+        "sstream": "cpp"
     }
 }
