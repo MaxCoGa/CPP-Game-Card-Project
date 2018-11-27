@@ -1,3 +1,13 @@
+/**
+ * ProjetDevoir 4 CSI 2772[A] Robert Laganiere
+ * Player.h
+ * Player object definition
+ *
+ *
+ *
+ * @author Maxime Cote-Gagne(8851539) & Valentin Magot
+ *
+ */
 
 #ifndef PLAYER_H
 #define PLAYER_H
