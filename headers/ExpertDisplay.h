@@ -1,5 +1,5 @@
-#ifndef EXPECTBOARD_H
-#define EXPERTBOARD_H
+#ifndef EXPERTDISPLAY_H
+#define EXPERTDISPLAY_H
 
 #include "Board.h"
 
@@ -7,7 +7,7 @@
 
 
 
-class ExpertBoard : public Board
+class ExpertDisplay : public Board
 {
 	friend std::ostream& operator<< (std::ostream&, const Board&);
 protected:
@@ -16,8 +16,8 @@ protected:
 	void faceDown(const Letter&, const Number&) ;//override;
 	void resetFunction() ;//override;
 public:
-	ExpertBoard() : Board() {};
-	~ExpertBoard() {};
+	ExpertDisplay() : Board() {};
+	~ExpertDisplay() {};
 };
 
 
