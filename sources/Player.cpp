@@ -19,7 +19,7 @@ void Player::setActive(bool active){
 	_active = active;
 }
 
-bool Player::isActive(){
+bool Player::isActive() const{
 	return _active;
 }
 
@@ -42,10 +42,10 @@ Side Player::getSide() const{
 //joueur imprimable a l'ecran avec ca
 std::ostream & operator<<(std::ostream & os, const Player & m){
 	if (!m._endOfGame) {//si faux
-		os << m._name << ": " << sideArray[m._boardSide] << " (active) \n";
+		os << m.getName() << " : " << sideArray[m.getSide()] << (m.isActive());
 	}
 	else {//sinon
-		os << m._name << ": " << m._rubies << " rubies \n";
+		os << m.getName() << " : " << m.getNRubies() << " rubies \n";
 	}
 
 	return os;
