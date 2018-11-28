@@ -40,12 +40,11 @@ print overall winner
 
 
 int main(){
-    
-    std::cout<< "Choose game version"<<std::endl;
-    //if avec la version choisie
-    std::cout<< "Choose number of players"<<std::endl;
-    int n = 1;
-    std::cout<< "Choose name for players "<<n<< std::endl;
+
+//test
+#if TEST_PLAYER
+	test_player();
+#endif
 
 
     
