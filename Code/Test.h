@@ -1,8 +1,10 @@
 #ifndef TEST_H
 #define TEST_H
 
-#define MAIN(1)//3
+#define MAIN(0)//3
+
 #define TEST_PLAYER(0)//2
+/*
 #define TEST_CARD(0)//1.5
 #define TEST_REWARD(0)//1
 //#define TEST_DECK(0) //2
@@ -14,5 +16,6 @@
 //EXPERT MODE
 #define TEST_EXPERTDISPLAY(0)//2
 #define TEST_EXPERTRULES(0)//4
+*/
 
 #endif
