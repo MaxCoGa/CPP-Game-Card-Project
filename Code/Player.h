@@ -63,15 +63,12 @@ static void test_player() {
 	std::cout << std::endl;
 
 	std::cout << "isActive()" << std::endl;
-	std::cout << playerOne.isActive() << std::endl;
-	std::cout << playerOne;
+	std::cout << playerOne.isActive() << " = " << playerOne;
 	playerOne.setActive(true);
-	std::cout << playerOne.isActive() << std::endl;
-	std::cout << playerOne;
-	std::cout << std::endl;
+	std::cout << playerOne.isActive() << " = " << playerOne << std::endl;
 
 	std::cout << "getSide()" << std::endl;
-	std::cout << playerOne.getSide() << std::endl;
+	std::cout << playerOne.getSide() << " = " << sideArray[playerOne.getSide()] <<std::endl;
 	std::cout << std::endl;
 
 	std::cout << "setDisplayMode()" << std::endl;
@@ -79,6 +76,9 @@ static void test_player() {
 	std::cout << playerOne;
 	std::cout << "endOfGame true:" << std::endl;
 	playerOne.setDisplayMode(true);
+	playerTwo.setDisplayMode(true);
+	playerThree.setDisplayMode(true);
+	playerFour.setDisplayMode(true);
 	std::cout << playerOne;
 	std::cout << std::endl;
 
@@ -96,9 +96,14 @@ static void test_player() {
 	playerThree.addReward(r3);
 	std::cout << playerThree;
 	playerFour.addReward(r4);
-	std::cout << playerFour;
+	std::cout << playerFour << std::endl;
 
+	std::cout << "getNRubies()" << std::endl;
+	std::cout << playerOne.getNRubies() << std::endl;
 
-	}
+	std::cout << "getName()" << std::endl;
+	std::cout << playerOne.getName();
+
+}
 #endif //second one
 #endif //first one
