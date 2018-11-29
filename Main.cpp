@@ -39,7 +39,9 @@ rubies
 print overall winner
 */
 
-
+void howToPlay(){
+	cout << "Show all the RULES TODO TODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODO" << endl;
+}
 
 int main(){
 
@@ -55,14 +57,21 @@ int main(){
 	Game* game = nullptr;
 	Rules* rules = nullptr;
 
-	auto input;
-	String HELP;
+	//game input
+	int input;
+	string HELP;
 
 	cout << "Memoarr, the board game. Implemented by Maxime & Valentin" << endl;
 	cout << "Press any key to START the game setup or HELP to how to play" << endl;
-	cin >> HELP;
-	if(HELP == ("HELP" || "help") ){
-
+	while (true) {
+		cin >> HELP;
+		if (HELP == "HELP") {
+			howToPlay();
+		}
+		else{
+			cout << "SETUP" << endl;
+			break;
+		}
 	}
 	cout << "This game have two displays: \n0 for normal \n1 for expert" << endl;
 #endif
