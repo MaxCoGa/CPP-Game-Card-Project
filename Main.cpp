@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 
-/*
+
 #include "Card.h"
 #include "Carddeck.h"
 #include "Player.h"
@@ -10,7 +10,8 @@
 #include "Board.h"
 #include "Game.h"
 #include "Rules.h"
-*/
+#include "ExpertRules.h"
+#include "ExpertDisplay.h"
 
 
 /*
