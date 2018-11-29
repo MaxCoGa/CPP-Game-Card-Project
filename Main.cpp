@@ -63,7 +63,7 @@ int main(){
 	int display;//normal or expert
 	int rule;//normal or expert
 
-	cout << "Memoarr, the board game. Implemented by Maxime & Valentin" << endl;
+	cout << "Memoarr, the board game. Implemented by Maxime & Valentin\n" << endl;	
 	cout << "Press any key to START the game setup or 1 to how to play" << endl;
 	while (true) {
 		cin >> help;
@@ -76,12 +76,13 @@ int main(){
 			cin.clear();
 			cin;
 			cin.ignore(100, '\n');
-			cout << "SETUP" << endl;
+			cout << "\nSETUP" << endl;
 			break;
 			
 		}
 	}
 	//cin.clear();
+	
 	cout << "This game have two displays: \n0 for normal \n1 for expert" << endl;
 #endif
 
