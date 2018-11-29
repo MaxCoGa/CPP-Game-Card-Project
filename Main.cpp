@@ -64,18 +64,24 @@ int main(){
 	int rule;//normal or expert
 
 	cout << "Memoarr, the board game. Implemented by Maxime & Valentin" << endl;
-	cout << "Press any key to START the game setup or 0 to how to play" << endl;
+	cout << "Press any key to START the game setup or 1 to how to play" << endl;
 	while (true) {
 		cin >> help;
-		if (help = 0) {
-			howToPlay();
-		}
-		else  {
+		if (!cin.fail() && help == 1){
 			cin.clear();
-			cout << "SETUP" << endl;
+			howToPlay();
 			break;
 		}
+		else if(cin.fail() || help != 1){ 
+			cin.clear();
+			cin;
+			cin.ignore(100, '\n');
+			cout << "SETUP" << endl;
+			break;
+			
+		}
 	}
+	//cin.clear();
 	cout << "This game have two displays: \n0 for normal \n1 for expert" << endl;
 #endif
 
