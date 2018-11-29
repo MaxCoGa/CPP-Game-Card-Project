@@ -13,6 +13,7 @@
 #include "ExpertRules.h"
 #include "ExpertDisplay.h"
 
+using namespace std;
 
 /*
 Ask player to choose game version, number of players and names of
@@ -47,6 +48,24 @@ int main(){
 	test_player();
 #endif
 
+//Game
+#if main
+	//set Board, Game and Rules to nullptr
+	Board* board = nullptr;
+	Game* game = nullptr;
+	Rules* rules = nullptr;
+
+	auto input;
+	String HELP;
+
+	cout << "Memoarr, the board game. Implemented by Maxime & Valentin" << endl;
+	cout << "Press any key to START the game setup or HELP to how to play" << endl;
+	cin >> HELP;
+	if(HELP == ("HELP" || "help") ){
+
+	}
+	cout << "This game have two displays: \n0 for normal \n1 for expert" << endl;
+#endif
 
     
 }
