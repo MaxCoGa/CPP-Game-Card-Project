@@ -16,8 +16,8 @@
 #include <iostream>
 #include "Reward.h"
 #include "Test.h"
-const std::string sideArray[] = {"top","bot","right","left"}; //rotation de joueur selon l'horloge
-enum Side{top,bot,right,left};//Grille top,bot,right,left
+const std::string sideArray[] = {"Top","Right","Bot","Left"}; //rotation de joueur selon l'horloge
+enum Side{top,right,bot,left};//Grille top,right,bot,left
 
 
 
@@ -29,6 +29,7 @@ class Player {
 		bool _active;//statut d'un joueur(a son tour de jouer ou non)
 		bool _endOfGame;//partie terminé ou non
 	public:
+
 		Player(std::string name, Side side);//constructeur a 2 arguments avec nom du joueur et son cote du board
 		Player(const Player&);//copie-constructeur
 		~Player();//destructeur

@@ -7,6 +7,10 @@ Player::Player(std::string name, Side side):
  _name(name), _boardSide(side), _rubies(0), _active(false), _endOfGame(false)
  {}
 
+Player::Player(const Player& p) :
+	_name(p._name), _boardSide(p._boardSide),
+	_rubies(p._rubies), _active(p._active), _endOfGame(p._endOfGame) {}
+
 Player::~Player()
 {}
 
