@@ -7,30 +7,30 @@
 //const Card* Game::_currentcard;
 //std::vector<Player> Game::_player;
 //Board* Game::_b;
-
-std::ostream &operator << (std::ostream &os, const Game &g) {
-
-    os << g._b << std::endl;
-
-    for (auto i : g._player) {
-       os  << i;
-    }
-    return os;
+Game::Game(Board& b) : _r(RewardDeck::make_RewardDeck()), _b(b) {
+	_r.shuffle();
 }
 
-int Game::getRound() {
+std::ostream& operator <<(std::ostream &os, const Game &g) {
+	os << g._b << std::endl;
+	return os;
+}
+
+
+int Game::getRound() const {
     return _round;
 }
 
 void Game::addPlayer(const Player& player){
-    
-    _player.push_back(player);
+    //TODO
+    //player.push_back(new Player(player));
 
 }
 
 
-Player& Game::getPlayer(Side side){
-    return _player.at(side);
+Player& Game::getPlayer(Side side) const{
+	//TODO
+	return *_player[side];//need vector ptr
 }
 
 const Card* Game::getPreviousCard(){
@@ -44,16 +44,17 @@ const Card* Game::getCurrentCard(){
 }
 
 void Game::setCurrentCard(const Card* c){
-    
+	_previouscard = _currentcard;
     _currentcard = c;
 }
 
 
-Game::~Game() {
-
-    _player.clear();
-    delete _b;
-    delete _previouscard;
-    delete _currentcard;
+//REV 2.0
+//MAY WORK IDK SO TOCHECK
+Card* Game::getCard(const Letter& letter, const Number& number) {
+	return _b.getCard(letter, number);
 }
 
+void Game::setCard(const Letter& letter, const Number& number, Card* card) {
+	_b.setCard(letter, number, card);
+}

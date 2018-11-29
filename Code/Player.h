@@ -51,7 +51,7 @@ class Player {
 
 #if TEST_PLAYER
 static void test_player() {
-	std::cout << std::endl << "PLAYER CLASS TEST" << std::endl;
+	std::cout << "PLAYER CLASS TEST" << std::endl;
 	Side side = top;
 	Player playerOne("Joe", side);
 	side = right;
@@ -60,11 +60,15 @@ static void test_player() {
 	Player playerThree("Valentin", side);
 	side = left;
 	Player playerFour("Robert", side);
+	std::cout << std::endl;
 
 	std::cout << "isActive()" << std::endl;
 	std::cout << playerOne.isActive() << std::endl;
+	std::cout << playerOne;
 	playerOne.setActive(true);
 	std::cout << playerOne.isActive() << std::endl;
+	std::cout << playerOne;
+	std::cout << std::endl;
 
 	std::cout << "getSide()" << std::endl;
 	std::cout << playerOne.getSide() << std::endl;
@@ -76,20 +80,25 @@ static void test_player() {
 	std::cout << "endOfGame true:" << std::endl;
 	playerOne.setDisplayMode(true);
 	std::cout << playerOne;
-	std::cout << endl;
+	std::cout << std::endl;
 
 	std::cout << "addReward()" << std::endl;
-	Reward r1(1), r2(4), r3(3);
+	Reward r1(1), r2(4), r3(3), r4(2);
 	std::cout << playerOne;
+	std::cout << playerTwo;
+	std::cout << playerThree;
+	std::cout << playerFour;
+
 	playerOne.addReward(r1);
 	std::cout << playerOne;
-	playerOne.addReward(r2);
-	std::cout << playerOne;
-	playerOne.addReward(r3);
-	std::cout << playerOne;
+	playerTwo.addReward(r2);
+	std::cout << playerTwo;
+	playerThree.addReward(r3);
+	std::cout << playerThree;
+	playerFour.addReward(r4);
+	std::cout << playerFour;
 
-	playerOne.setActive(false);
-	std::cout << playerOne.isActive() << endl;
+
 	}
 #endif //second one
 #endif //first one

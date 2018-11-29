@@ -13,7 +13,6 @@ private:
     //Crab='C', Penguin='P', Octopus='O', Walrus='W', Turtle='T'
     void crab();
     void penguin();
-	void crab();
 	void octopus();
     void walrus();
     void turtle();

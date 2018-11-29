@@ -9,19 +9,18 @@
 
 class Rules
 {
-protected:
+private:
 	std::vector<Side> players;
-	int firstplayer, currentplayer;
-	Side nextPlayer(); 
-	Side previousPlayer();
+	int firstplayer;
+	int currentplayer;
 	int cardsturned = 0; 
 public:
 	Rules();
-	virtual ~Rules();
-	virtual bool isValid(const Game& g);
-	virtual bool gameOver(const Game& g);
-	virtual bool roundOver(const Game& g);
-	virtual const Player& getNextPlayer(const Game& g);
+	~Rules();
+	bool isValid(const Game& g);
+	bool gameOver(const Game& g);
+	bool roundOver(const Game& g);
+	const Player& getNextPlayer(const Game& g);
 };
 
 #endif

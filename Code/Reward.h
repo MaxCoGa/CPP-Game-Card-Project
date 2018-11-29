@@ -7,9 +7,9 @@ class Reward{
 	friend class RewardDeck;
 private:
 	int _number;
-	Reward(int number);
-public:
 	//Reward(int number);
+public:
+	Reward(int number);
 	
 	//utilise pour RewardDeck
 	Reward(const Reward&) = delete;

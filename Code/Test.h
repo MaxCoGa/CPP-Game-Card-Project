@@ -4,7 +4,7 @@
 #define MAIN (0)//3
 //define MAIN(0) make an error WOW WOW WOW !!!!!!!!!!!
 
-#define TEST_PLAYER (0)//2
+#define TEST_PLAYER (1)//2
 /*
 #define TEST_CARD(0)//1.5
 #define TEST_REWARD(0)//1

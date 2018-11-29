@@ -42,7 +42,7 @@ Side Player::getSide() const{
 //joueur imprimable a l'ecran avec ca
 std::ostream & operator<<(std::ostream & os, const Player & m){
 	if (!m._endOfGame) {//si faux
-		os << m.getName() << " : " << sideArray[m.getSide()] << (m.isActive());
+		os << m.getName() << " : " << sideArray[m.getSide()] << " " << (m.isActive() ? "active" : "inactive") << std::endl;;
 	}
 	else {//sinon
 		os << m.getName() << " : " << m.getNRubies() << " rubies \n";

@@ -3,23 +3,24 @@
 
 #include <iostream>
 #include "CardDeck.h"
+#include <iostream>
 
 
 enum Letter { A, B, C, D, E};
-enum Number { I, II, III, IV, V };
+enum Number { ONE, TWO, THREE, FOUR, FIVE };
 enum CardSide {FACE,BACK='Z'};
 
 class Board{
-	friend std::ostream& operator<<(std::ostream &os, const Board &b);
-
 	
+
+protected:
     static const int rows = 5, cols = 5;
 	std::string matrix[21]; //ecran meme
 	Card* cardmatrix[rows][cols]; //les cartes
 	CardSide cardSide[rows][cols]; //le cote d'une carte
 
 public:
-	Board() = default;
+	Board();
 	virtual ~Board();
 	Board(const Board&) = delete;
 	Board& operator=(const Board&) = delete;
@@ -28,6 +29,8 @@ public:
 	bool turnFaceUp(const Letter&, const Number&);
 	bool turnFaceDown(const Letter&, const Number&);
 	void reset();
+
+	friend std::ostream& operator<<(std::ostream &os, const Board &b);
 
 
     //rev2 du projet
