@@ -30,6 +30,7 @@ class Player {
 		bool _endOfGame;//partie terminé ou non
 	public:
 		Player(std::string name, Side side);//constructeur a 2 arguments avec nom du joueur et son cote du board
+		Player(const Player&);//copie-constructeur
 		~Player();//destructeur
 
 
@@ -46,7 +47,7 @@ class Player {
 };
 
 
-#endif 
+
 
 #if TEST_PLAYER
 static void test_player() {
@@ -60,36 +61,35 @@ static void test_player() {
 	side = left;
 	Player playerFour("Robert", side);
 
-
-	cout << "isActive()" << endl;
-	cout << playerOne.isActive() << endl;
+	std::cout << "isActive()" << std::endl;
+	std::cout << playerOne.isActive() << std::endl;
 	playerOne.setActive(true);
-	cout << playerOne.isActive() << endl;
+	std::cout << playerOne.isActive() << std::endl;
 
-	cout << endl;
+	std::cout << "getSide()" << std::endl;
+	std::cout << playerOne.getSide() << std::endl;
+	std::cout << std::endl;
 
-	cout << "getSide()" << endl;
-	cout << playerOne.getSide() << endl;
-	cout << endl;
-
-	cout << "setDisplayMode()" << endl;
-	cout << "endOfGame False:" << endl;
-	cout << playerOne;
-	cout << "endOfGame true:" << endl;
+	std::cout << "setDisplayMode()" << std::endl;
+	std::cout << "endOfGame False:" << std::endl;
+	std::cout << playerOne;
+	std::cout << "endOfGame true:" << std::endl;
 	playerOne.setDisplayMode(true);
-	cout << playerOne;
-	cout << endl;
+	std::cout << playerOne;
+	std::cout << endl;
 
-	cout << "addReward()" << endl;
+	std::cout << "addReward()" << std::endl;
 	Reward r1(1), r2(4), r3(3);
-	cout << playerOne;
+	std::cout << playerOne;
 	playerOne.addReward(r1);
-	cout << playerOne;
+	std::cout << playerOne;
 	playerOne.addReward(r2);
-	cout << playerOne;
+	std::cout << playerOne;
 	playerOne.addReward(r3);
-	cout << playerOne;
+	std::cout << playerOne;
 
 	playerOne.setActive(false);
-	cout << playerOne.isActive() << endl;
-#endif
+	std::cout << playerOne.isActive() << endl;
+	}
+#endif //second one
+#endif //first one
