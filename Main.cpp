@@ -70,7 +70,8 @@ int main(){
 		if (help = 0) {
 			howToPlay();
 		}
-		else if(help != 0){
+		else  {
+			cin.clear();
 			cout << "SETUP" << endl;
 			break;
 		}
