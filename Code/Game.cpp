@@ -1,60 +1,77 @@
+#include "game.h"
 
-
-#include "Game.h"
-#include "Board.h"
-
-//const Card* Game::_previouscard;
-//const Card* Game::_currentcard;
-//std::vector<Player> Game::_player;
-//Board* Game::_b;
-Game::Game(Board& b) : _r(RewardDeck::make_RewardDeck()), _b(b) {
-	_r.shuffle();
+Game::Game(Board& b) : rd(RewardDeck::make_RewardDeck()), board(b) {
+	rd.shuffle();
 }
 
-std::ostream& operator <<(std::ostream &os, const Game &g) {
-	os << g._b << std::endl;
+Game::~Game()
+{
+	for (auto i : players) {
+		delete i;
+	}
+}
+
+void Game::addPlayer(const Player& p) {
+	bool playerPresent = false;
+	for (auto &ep : players) {
+		if (p.getSide() == ep->getSide()) {
+			playerPresent = true;
+			ep->setActive(p.isActive());
+			break;
+		}
+	}
+	if (!playerPresent) {
+		players.push_back(new Player(p));
+	}
+}
+
+Player& Game::getPlayer(Side s) const {
+	//ensure requested player is present
+	if (s < players.size() && players[s] != nullptr) return *(players[s]);
+	else throw NoSuchPlayer();
+}
+
+void Game::setCurrentCard(const Card* c) {
+	previousCard = currentCard;
+	currentCard = c;
+}
+
+Card* Game::getCard(const Letter& l, const Number& n) const {
+	return board.getCard(l, n);
+}
+
+void Game::setCard(const Letter& l, const Number& n, Card* c) {
+	board.setCard(l, n, c);
+}
+
+std::ostream& operator<< (std::ostream& os, const Game& g) {
+	os << g.board << std::endl;
+	for (int i = 0; i < g.players.size(); ++i) {
+		if (g.players[i] != nullptr) {
+			os << *g.players[i];
+		}
+	}
 	return os;
 }
 
+void Game::nextRound() {//add reward
+	previousCard = 0;
+	currentCard = 0;
+	++round;
+	for (auto p : players) {
+		
+		if (p->isActive()) {
+			int tmp1 = p->getNRubies();
+			p->addReward(*rd.getNext());
+			int tmp2 = p->getNRubies();
+			int tmp3 = tmp2 - tmp1;
 
-int Game::getRound() const {
-    return _round;
-}
+			std::cout << p->getName() << " receive " << tmp3 << " rubies from winning this round" << std::endl;
 
-void Game::addPlayer(const Player& player){
-    //TODO
-    //player.push_back(new Player(player));
-
-}
-
-
-Player& Game::getPlayer(Side side) const{
-	//TODO
-	return *_player[side];//need vector ptr
-}
-
-const Card* Game::getPreviousCard(){
-    
-    return _previouscard;
-}
-
-const Card* Game::getCurrentCard(){
-    
-    return _currentcard;
-}
-
-void Game::setCurrentCard(const Card* c){
-	_previouscard = _currentcard;
-    _currentcard = c;
-}
-
-
-//REV 2.0
-//MAY WORK IDK SO TOCHECK
-Card* Game::getCard(const Letter& letter, const Number& number) {
-	return _b.getCard(letter, number);
-}
-
-void Game::setCard(const Letter& letter, const Number& number, Card* card) {
-	_b.setCard(letter, number, card);
+		}
+	}
+	//make all player actve for next round
+	for (auto p : players) {
+		p->setActive(true);
+	}
 }

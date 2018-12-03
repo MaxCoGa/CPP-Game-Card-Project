@@ -4,10 +4,10 @@
 
 std::vector<Card*> CardDeck::deck;
 
-CardDeck& CardDeck::make_CardDeck() {
+CardDeck& CardDeck::make_CardDeck() {//make factory 
 	CardDeck* cd = new CardDeck();
-	for (auto colour : { FaceBackground::Blue, FaceBackground::Green, FaceBackground::Purple, FaceBackground::Red, FaceBackground::Yellow }) {
-		for (auto animal : { FaceAnimal::Crab, FaceAnimal::Octopus, FaceAnimal::Penguin, FaceAnimal::Turtle, FaceAnimal::Walrus }) {
+	for (auto colour : { Card::FaceBackground::Blue, Card::FaceBackground::Green, Card::FaceBackground::Purple, Card::FaceBackground::Red, Card::FaceBackground::Yellow }) {
+		for (auto animal : { Card::FaceAnimal::Crab, Card::FaceAnimal::Octopus, Card::FaceAnimal::Penguin, Card::FaceAnimal::Turtle, Card::FaceAnimal::Walrus }) {
 			deck.push_back(new Card(animal, colour));
 		}
 	}

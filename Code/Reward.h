@@ -22,4 +22,17 @@ public:
 	}
 };
 
+#if TEST_REWARD
+static void test_reward() {
+	std::cout << std::endl << "TEST REWARD"<< std::endl;
+	Reward r1(0), r2(5), r3(3);
+	std::cout << "Test Constructor: " << std::endl;
+	std::cout << "r1: " << r1 << std::endl;
+	std::cout << "r2: " << r2 << std::endl;
+	std::cout << "r3: " << r3 << std::endl;
+	std::cout << std::endl;
+}
+#endif
+
+
 #endif
