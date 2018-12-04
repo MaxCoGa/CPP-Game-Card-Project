@@ -27,8 +27,12 @@ void Game::addPlayer(const Player& p) {
 
 Player& Game::getPlayer(Side s) const {
 	//ensure requested player is present
-	if (s < players.size() && players[s] != nullptr) return *(players[s]);
-	else throw NoSuchPlayer();
+	if (s < players.size() && players[s] != nullptr) {
+		return *(players[s]);
+	}
+	else {
+		throw NoSuchPlayer();
+	}
 }
 
 void Game::setCurrentCard(const Card* c) {
@@ -44,6 +48,8 @@ void Game::setCard(const Letter& l, const Number& n, Card* c) {
 	board.setCard(l, n, c);
 }
 
+
+//OSTREAM
 std::ostream& operator<< (std::ostream& os, const Game& g) {
 	os << g.board << std::endl;
 	for (int i = 0; i < g.players.size(); ++i) {
@@ -54,7 +60,7 @@ std::ostream& operator<< (std::ostream& os, const Game& g) {
 	return os;
 }
 
-void Game::nextRound() {//add reward
+void Game::next() {//add reward
 	previousCard = 0;
 	currentCard = 0;
 	++round;

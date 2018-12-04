@@ -4,27 +4,34 @@
 #include "deck.h"
 #include "card.h"
 #include <vector>
+#include<iostream>
+//exceptions
+struct CardDeckAlreadyCreated : public std::exception {
+	const char * what() const throw () {
+		return "CardDeckAlreadyCreated exception: one CardDeck objects can be created";
+	}
+};
 
 class CardDeck : public Deck<Card>{
     private:
+
+		static CardDeck* cd;
         static std::vector<Card*> deck;
         int lastCard = -1;
-        CardDeck(){};
+		
     public:
+		CardDeck();
         ~CardDeck();
         CardDeck(const CardDeck& cd) = delete;
         CardDeck& operator= (const CardDeck& cd) = delete;
 
-        
-        static CardDeck& make_CardDeck();
-
+		static CardDeck& make_CardDeck();
         virtual void shuffle();
         virtual Card* getNext();
         virtual bool isEmpty() const;
 };
 
 #if TEST_CARDDECK
-#include <iostream>
 static void test_carddeck() {
 	std::cout << std::endl << "TEST CARDDECK" << std::endl;
 	CardDeck* cd = &CardDeck::make_CardDeck();

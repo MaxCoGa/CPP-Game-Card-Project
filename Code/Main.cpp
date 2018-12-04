@@ -16,8 +16,8 @@
 #include <string>
 #include <iostream>
 
-#include <iomanip>//new
-#include <windows.h>//new
+//#include <iomanip>//new
+//#include <windows.h>//new
 
 
 
@@ -101,14 +101,14 @@ std::cout << std::endl;
 	while (true) {//big loop to make the game replayed after 7 rounds
 		//ADD counter for number of game win or loss it may be an array/vector of win or loss
 
-		//major definitions
+		//Objects that need to be destroy after
 		Board* board = nullptr;
 		Game* game = nullptr;
 		Rules* rules = nullptr;
 
 		//TESTING COLOR
 		int color = 2;
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 31);
+		//SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 31);
 
 
 		//game input
@@ -122,7 +122,7 @@ std::cout << std::endl;
 		std::cout << "Press any key to START the game setup or 1 to how to play" << std::endl;
 		//HELP
 		while (true) {
-			std::cout << "HELP LOOP" << std::endl;
+			//std::cout << "HELP LOOP" << std::endl;
 			std::cin >> help;
 			if (!std::cin.fail() && help == 1) {
 				std::cin.clear();
@@ -144,15 +144,15 @@ std::cout << std::endl;
 		//DISPLAY
 		std::cout << "This game have two displays: \n0 for normal \n1 for expert" << std::endl;
 		while (true) {
-			std::cout << "DISPLAY LOOP" << std::endl;
+			//std::cout << "DISPLAY LOOP" << std::endl;
 			std::cin >> display;
 			if (!std::cin.fail() && display == 0) {
-				std::cout << "Normal display choose" << std::endl;
+				std::cout << "Normal display choose\n" << std::endl;
 				board = new Board();
 				break;
 			}
 			else if (!std::cin.fail() && display == 1) {
-				std::cout << "Expert display choose" << std::endl;
+				std::cout << "Expert display choose\n" << std::endl;
 				//board = new Board();//change to new ExpertDisplay();
 				break;
 
@@ -166,18 +166,18 @@ std::cout << std::endl;
 		//cin.clear();
 
 		//RULES
-		std::cout << "This game have two differents way to play: \n0 for normal \n1 for expert" << std::endl;
+		std::cout << "This game have two differents set of rules: \n0 for normal \n1 for expert" << std::endl;
 		while (true) {
-			std::cout << "RULES LOOP" << std::endl;
+			//std::cout << "RULES LOOP" << std::endl;
 			std::cin >> rule;
 			if (!std::cin.fail() && rule == 0) {
-				std::cout << "Normal rule choose" << std::endl;
+				std::cout << "Normal rule choose\n" << std::endl;
 				game = new Game(*board);
 				rules = new Rules();
 				break;
 			}
 			else if (!std::cin.fail() && rule == 1) {
-				std::cout << "Expert rule choose" << std::endl;
+				std::cout << "Expert rule choose\n" << std::endl;
 				//game = new Game(*board);
 				//rules = new Rules();//change to new ExpertRules();
 				break;
@@ -197,7 +197,7 @@ std::cout << std::endl;
 		int numPlayers = -1;
 		int tempNumPlayers = -1;
 		while (numPlayers == -1) {
-			std::cout << "NUMBERS LOOP" << std::endl;
+			//std::cout << "NUMBERS LOOP" << std::endl;
 			std::cin >> numPlayers;
 			if (!std::cin.fail() && (numPlayers > 1 && numPlayers < 5)) {
 			}
@@ -210,7 +210,7 @@ std::cout << std::endl;
 		}
 		tempNumPlayers = numPlayers;
 		for (auto &side : { top, right, bot, left }) {
-			std::cout << "NAME LOOP" << std::endl;
+			//std::cout << "NAME LOOP" << std::endl;
 			std::cout <<"Enter player " << side + 1 << " name" << std::endl;
 			//int i = 0;
 			while (true) {
@@ -219,7 +219,7 @@ std::cout << std::endl;
 					Player p(playerName, side);
 					p.setActive(true);
 					game->addPlayer(p);
-					std::cout << p << std::endl;
+					//std::cout << p << std::endl;//TESTING ONLY
 					break;
 				}
 				else {
@@ -250,15 +250,17 @@ std::cout << std::endl;
 			
 			tempNumPlayers = numPlayers;//temp number
 
+			std::cout << *game << std::endl;//show the game with all the card backsiede down
+
 			//reveal cards section - show each player their card selection
 			for (auto &side:{top,right,bot,left}) {
-				std::cout << *game << std::endl;
+				//std::cout << *game << std::endl;
 
 				Player& p = game->getPlayer(side);
 				p.setActive(true);
 
-				std::cout << sideArray[side] << " player " << p.getName() << " turn to see his three fronts cards" << std::endl;
-				std::cout << Side(0) << " " << side << std::endl;//test purpose only
+				std::cout << sideArray[side] << " player " << p.getName() << " see his three middle fronts cards" << std::endl;
+				//std::cout << Side(0) << " " << side << std::endl;//test purpose only
 				if (side == Side(0)) {//Top
 					board->turnFaceUp(A, TWO);
 					board->turnFaceUp(A, THREE);
@@ -311,11 +313,11 @@ std::cout << std::endl;
 
 				//player chooses card by specifying letter and number, validate card choice loop
 				while (!validCardChoice) {
-					std::cout << "Player on the " << sideArray[p.getSide()] << " side of the board, choose a card coordinate to turn over." << std::endl;
+					std::cout << p.getName() <<" on the " << sideArray[p.getSide()] << " turn!" << std::endl;
 					
 					
 					//CHOOSE LETTER
-					std::cout << "Enter a letter (A, B, C, D, E)" << std::endl;
+					std::cout << "Letter (A, B, C, D, E)" << std::endl;
 
 					
 					while (true) {
@@ -334,7 +336,7 @@ std::cout << std::endl;
 							break;
 						}
 						else {
-							std::cout << "Input must be A, B, C, D, or E." << std::endl;
+							std::cout << "A, B, C, D, or E ONLY!" << std::endl;
 							std::cin.clear();
 							std::cin.ignore(100, '\n');
 						}
@@ -342,7 +344,7 @@ std::cout << std::endl;
 
 
 					//CHOOSE NUMBER
-					std::cout << "Enter a number(1, 2, 3, 4, 5)." << std::endl;
+					std::cout << "Number 1, 2, 3, 4, 5" << std::endl;
 
 					while (true) {
 						std::cin >> tN;
@@ -353,21 +355,21 @@ std::cout << std::endl;
 							break;
 						}
 						else {
-							std::cout << "Input must be 1, 2, 3, 4, or 5." << std::endl;
+							std::cout << "1, 2, 3, 4, or 5 ONLY!" << std::endl;
 							tN = -1;
 							std::cin.clear();
 							std::cin.ignore(100, '\n');
 						}
 					}
 
-
-					if (tmpL == C && tmpN == THREE) {//no card at the center
+					//no card at the center
+					if (tmpL == C && tmpN == THREE) {
 						std::cout << "C3 is not a valid postition" << std::endl;
 					}
 					else {
 						Card* c = game->getCard(tmpL, tmpN);
 
-						//chosen valid card turned face up and set as current card in play
+						//If valid card is choosen!!!
 						if (board->turnFaceUp(tmpL, tmpN)) {
 							validCardChoice = true;
 							game->setCurrentCard(c);
@@ -389,13 +391,13 @@ std::cout << std::endl;
 
 
 			//put all players active
-			game->nextRound();
+			game->next();
 		
 
 		} //end of game loop
 
 
-		//A game is terminated
+		//Game is terminated
 		//low to high
 		std::vector<Player> pl;
 		for (int i = 0; i < numPlayers; ++i) {
@@ -416,23 +418,25 @@ std::cout << std::endl;
 			}
 			pl.erase(pl.begin() + temp);
 		}
-
+		/*
 		if (true) {
 			std::cout << "New Game? y/n" << std::endl;
 			char yn;
 			std::cin >> yn;
 			if (yn == 'n') {
+				*/
+				//destroy objects
+				delete board;
+				delete game;
+				delete rules;
+
 				break;
-			}
+			//}
 			//break;//make out of loop
-		}
+		//}
 
 
 
-		//destroy objects
-		delete board;
-		delete game;
-		delete rules;
 
 		
 	}//BIG LOOP WHILE/// DONT REMOVE

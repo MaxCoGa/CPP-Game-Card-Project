@@ -5,7 +5,10 @@
 Rules::Rules()
 {
 	//set player order
-	for (auto side : { top, right, bot, left }) players.push_back(side);
+	for (auto side : { top, right, bot, left }) {//WORK!!!
+		players.push_back(side);
+	}
+
 	//set initial player indices
 	firstplayer = 0;
 	currentplayer = firstplayer - 1; //current player is not selected, will be incremented by nextPlayer on first run
@@ -28,8 +31,12 @@ bool Rules::isValid(const Game& g) {
 
 bool Rules::gameOver(const Game& g) {
 	//maximum 7 rounds in game
-	if (g.getRound() >= 7)	return true;
-	else return false;
+	if (g.getRound() >= 7) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 bool Rules::roundOver(const Game& g) {
@@ -81,16 +88,26 @@ const Player& Rules::getNextPlayer(const Game& g) {
 	return *player;
 }
 
+
+
 Side Rules::nextPlayer() {
-	//cycles to next player in order
-	if (currentplayer < players.size() - 1) ++currentplayer;
-	else currentplayer = firstplayer;
+	if (currentplayer < players.size() - 1) {
+		++currentplayer;
+	}
+	else {
+		currentplayer = firstplayer;
+	}
+
 	return players[currentplayer];
 }
 
 Side Rules::previousPlayer() {
-	//cycles to prevous player in order
-	if (currentplayer > 0) --currentplayer;
-	else currentplayer = players.size() - 1;
+	if (currentplayer > 0) {
+		--currentplayer;
+	}
+	else {
+		currentplayer = players.size() - 1;
+	}
+
 	return players[currentplayer];
 }
