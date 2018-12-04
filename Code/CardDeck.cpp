@@ -1,5 +1,7 @@
 #include "carddeck.h"
 #include <algorithm>//utilise pour random_shuffle
+#include <random>
+#include<ctime>
 std::vector<Card*> CardDeck::deck;
 CardDeck* CardDeck::cd = nullptr;//Pour le singleton
 
@@ -33,9 +35,10 @@ CardDeck::~CardDeck() {
 }
 
 void CardDeck::shuffle() {
-	if (!deck.empty()) {
-		std::random_shuffle(deck.begin(), deck.end());
-	}
+
+	srand(unsigned(time(NULL)));
+	std::random_shuffle(deck.begin(), deck.end());
+	
 }
 
 
