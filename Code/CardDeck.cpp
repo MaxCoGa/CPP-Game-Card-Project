@@ -34,7 +34,7 @@ CardDeck::~CardDeck() {
 	deck.clear();
 }
 
-void CardDeck::shuffle() {
+void CardDeck::shuffle() {//shuffle finish
 
 	srand(unsigned(time(NULL)));
 	std::random_shuffle(deck.begin(), deck.end());
