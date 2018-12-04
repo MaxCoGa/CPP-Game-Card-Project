@@ -36,6 +36,6 @@ public:
 	Card* getCard(const Letter&, const Number&) const;
 	void setCard(const Letter&, const Number&, Card*);
 	
-	void next();//new
+	void next();//new function
 };
 #endif
