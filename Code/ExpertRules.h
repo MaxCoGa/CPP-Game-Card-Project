@@ -18,8 +18,8 @@ private:
     void turtle();
 public:
 	ExpertRules() : Rules() {};
-	~ExpertRules();
-	bool isValid(const Game& g);
+	~ExpertRules() {};
+	bool isValid(const Game& g);//redefined from Rules!!
 };
 
 #endif

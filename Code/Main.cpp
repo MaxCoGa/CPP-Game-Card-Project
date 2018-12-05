@@ -98,7 +98,7 @@ std::cout << std::endl;
 
 //Game
 #if MAIN
-	while (true) {//big loop to make the game replayed after 7 rounds
+	while (true) {//big loop to make the game playable again after 7 rounds //Maybe?
 		//ADD counter for number of game win or loss it may be an array/vector of win or loss
 
 		//Objects that need to be destroy after
