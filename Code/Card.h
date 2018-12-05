@@ -1,15 +1,15 @@
 #ifndef CARD_H
 #define CARD_H
 #include <string>
-/*
+
 enum FaceAnimal { Crab='C', Penguin='P', Octopus='O', Walrus='W', Turtle='T' };
 enum FaceBackground { Red='r', Green='g', Purple='p', Blue='b', Yellow='y' };//change to lowercase letter
-*/
+
 class Card {
 	friend class CardDeck;
 public:
-	enum FaceAnimal { Crab = 'C', Penguin = 'P', Octopus = 'O', Walrus = 'W', Turtle = 'T' };
-	enum FaceBackground { Red = 'r', Green = 'g', Purple = 'p', Blue = 'b', Yellow = 'y' };//change to lowercase letter
+	//enum FaceAnimal { Crab = 'C', Penguin = 'P', Octopus = 'O', Walrus = 'W', Turtle = 'T' };
+	//enum FaceBackground { Red = 'r', Green = 'g', Purple = 'p', Blue = 'b', Yellow = 'y' };//change to lowercase letter
 
 private:
 	FaceAnimal _animal;
@@ -73,17 +73,19 @@ Card c(Penguin, Red);
 	*/
 
 #if TEST_CARD
+//enum FaceAnimal { Crab = 'C', Penguin = 'P', Octopus = 'O', Walrus = 'W', Turtle = 'T' };
+//enum FaceBackground { Red = 'r', Green = 'g', Purple = 'p', Blue = 'b', Yellow = 'y' };
 static void test_card() {
 	std::cout << std::endl;
 	std::cout << "TEST CARD" << std::endl;
-	Card c(Card::Penguin, Card::Red);
+	Card c(FaceAnimal::Penguin, FaceBackground::Red);
 	for (int i = 0; i < c.getNRows(); ++i) {
 		//std::string rowString = c(row);
 		//std::cout << rowString << std::endl;
 		std::cout << c(i) << std::endl;
 	}
-	std::cout << "Card colour: " << static_cast<char>(static_cast<Card::FaceBackground>(c)) << std::endl;
-	std::cout << "Card animal: " << static_cast<char>(static_cast<Card::FaceAnimal>(c)) << std::endl;
+	std::cout << "Card colour: " << static_cast<char>(static_cast<FaceBackground>(c)) << std::endl;
+	std::cout << "Card animal: " << static_cast<char>(static_cast<FaceAnimal>(c)) << std::endl;
 }
 #endif
 #endif

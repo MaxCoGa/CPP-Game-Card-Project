@@ -1,32 +1,34 @@
 #include "Rules.h"
 
-
+//players est un vector!!!
 
 Rules::Rules()
 {
-	//set player order
-	for (auto side : { top, right, bot, left }) {//WORK!!!
+	//Ordre des joueurs : Top, Right, Bottom, Left : Sens d'horloge
+	for (auto side : { top, right, bot, left }) {//AUTO IS NICE TO USE HERE! should be use everywhere when we can instead!!
 		players.push_back(side);
 	}
-
 	//set initial player indices
 	firstplayer = 0;
 	currentplayer = firstplayer - 1; //current player is not selected, will be incremented by nextPlayer on first run
 }
 
 
-Rules::~Rules()
-{
-}
 
 bool Rules::isValid(const Game& g) {
 	//current and previous cards have to match either animal or colour
 	++cardsturned;
 	const Card* cc = g.getCurrentCard();
 	const Card* pc = g.getPreviousCard();
-	if (pc == nullptr) return true;
-	if (((Card::FaceAnimal) *cc == (Card::FaceAnimal) *pc) || ((Card::FaceBackground)*cc == (Card::FaceBackground)*pc)) return true;
-	else return false;
+	if (pc == nullptr) {
+		return true;
+	}
+	if (((FaceAnimal)*cc == (FaceAnimal)*pc) || ((FaceBackground)*cc == (FaceBackground)*pc)) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 bool Rules::gameOver(const Game& g) {
@@ -50,7 +52,7 @@ bool Rules::roundOver(const Game& g) {
 				activeplayers.push_back(player);
 			}
 		}
-		catch (NoSuchPlayer e) {
+		catch (NoPlayer e) {
 		}
 	}
 	//round over when only one active player remains, or all cards are turned over (in which case we take the last player to win the round)
@@ -79,7 +81,7 @@ const Player& Rules::getNextPlayer(const Game& g) {
 			player = &g.getPlayer(nextPlayer()); //get next player object
 			if (!player->isActive()) player == nullptr;
 		}
-		catch (NoSuchPlayer e) {
+		catch (NoPlayer e) {
 			attempts--;
 			if (attempts == 0) throw "Rules could not obtain valid players from Game";
 		}

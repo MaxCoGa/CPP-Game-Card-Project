@@ -31,7 +31,7 @@ Player& Game::getPlayer(Side s) const {
 		return *(players[s]);
 	}
 	else {
-		throw NoSuchPlayer();
+		throw NoPlayer();
 	}
 }
 

@@ -8,19 +8,27 @@
 #include <exception>
 #include <vector>
 
-//exceptions
-struct NoSuchPlayer : public std::exception {
+/*
+ *exception
+ */
+struct NoPlayer : public std::exception {
 	const char * what() const throw () {
-		return "NoSuchPlayer exception: no player on the requested side";
+		return "NoPlayer exception: no player on the called side!";
 	}
 };
 
 class Game
 {
-	const Card *previousCard, *currentCard;
+private:
 	Board& board;
+
+	const Card *previousCard;
+	const Card *currentCard;
+
 	int round;
+
 	std::vector<Player*> players;
+
 	RewardDeck& rd;
 
 	friend std::ostream& operator<< (std::ostream& os, const Game& g);

@@ -21,7 +21,7 @@ private:
 	int cardsturned = 0; 
 public:
 	Rules();
-	~Rules();//NOT MODIFIED
+	~Rules() {};//should work 
 	bool isValid(const Game& g);
 	bool gameOver(const Game& g);
 	bool roundOver(const Game& g);

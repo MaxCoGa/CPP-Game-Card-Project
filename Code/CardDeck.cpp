@@ -6,8 +6,8 @@ std::vector<Card*> CardDeck::deck;
 CardDeck* CardDeck::cd = nullptr;//Pour le singleton
 
 CardDeck::CardDeck(){
-	for (auto colour : { Card::FaceBackground::Blue, Card::FaceBackground::Green, Card::FaceBackground::Purple, Card::FaceBackground::Red, Card::FaceBackground::Yellow }) {
-		for (auto animal : { Card::FaceAnimal::Crab, Card::FaceAnimal::Octopus, Card::FaceAnimal::Penguin, Card::FaceAnimal::Turtle, Card::FaceAnimal::Walrus }) {
+	for (auto colour : { FaceBackground::Blue, FaceBackground::Green, FaceBackground::Purple, FaceBackground::Red, FaceBackground::Yellow }) {
+		for (auto animal : { FaceAnimal::Crab, FaceAnimal::Octopus, FaceAnimal::Penguin, FaceAnimal::Turtle, FaceAnimal::Walrus }) {
 			deck.push_back(new Card(animal, colour));
 
 		}
@@ -37,7 +37,7 @@ CardDeck::~CardDeck() {
 void CardDeck::shuffle() {//shuffle finish
 
 	srand(unsigned(time(NULL)));
-	std::random_shuffle(deck.begin(), deck.end());
+	std::random_shuffle(deck.begin(), deck.end());//std::random_shuffle is use CHECK!
 	
 }
 
