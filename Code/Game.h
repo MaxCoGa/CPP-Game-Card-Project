@@ -1,3 +1,9 @@
+/**
+ * Projet 4 CSI 2772[A] Robert Laganiere
+ *
+ * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
+ *
+ */
 #ifndef GAME_H
 #define GAME_H
 #include "Test.h"

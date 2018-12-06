@@ -1,3 +1,9 @@
+/**
+ * Projet 4 CSI 2772[A] Robert Laganiere
+ *
+ * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
+ *
+ */
 #include "carddeck.h"
 #include <algorithm>//utilise pour random_shuffle
 #include <random>
