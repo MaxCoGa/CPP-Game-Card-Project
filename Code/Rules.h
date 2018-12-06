@@ -10,6 +10,7 @@
 class Rules
 {
 private:
+protected://need for the implement of expertrules
 	//SIDE
 	std::vector<Side> players;
 	Side nextPlayer();

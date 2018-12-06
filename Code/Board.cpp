@@ -15,11 +15,6 @@ Board::Board() {
 	}
 }
 
-Board::~Board() {
-	//LIKE THIS IT'S WORKING SO
-}
-
-
 bool Board::isFaceUp(const Letter& l, const Number& n) const {
 	if (outOfRange(l, n)) {
 		throw OutOfRange();
@@ -35,7 +30,7 @@ bool Board::isFaceUp(const Letter& l, const Number& n) const {
 bool Board::turnFaceUp(const Letter& l, const Number& n) {
 	if (outOfRange(l, n))
 		throw OutOfRange();
-	drawFaceUp(l, n);
+	faceUp(l, n);
 	if (cardSide[l][n])
 		return false;
 	else {
@@ -47,7 +42,7 @@ bool Board::turnFaceUp(const Letter& l, const Number& n) {
 bool Board::turnFaceDown(const Letter& l, const Number& n) {
 	if (outOfRange(l, n))
 		throw OutOfRange();
-	drawFaceDown(l, n);
+	faceDown(l, n);
 	if (!cardSide[l][n])
 		return false;
 	else {
@@ -128,13 +123,13 @@ void Board::setCard(const Letter& l, const Number& n, Card* c) {
 }
 
 //CHANGE CARDSIDE
-void Board::drawFaceDown(const Letter& l, const Number& n) {
+void Board::faceDown(const Letter& l, const Number& n) {
 	for (int r = l * 4; r < l * 4 + 3; ++r) {
-		matrix[r].replace(n * 4 + 2, 3, "zzz");
+		matrix[r].replace(n * 4 + 2, 3, "ZZZ");
 	}
 }
 
-void Board::drawFaceUp(const Letter& l, const Number& n) {
+void Board::faceUp(const Letter& l, const Number& n) {
 	for (int r = l * 4; r < l * 4 + 3; ++r) {
 		Card* c = cardmatrix[l][n];
 		matrix[r].replace(n * 4 + 2, 3, c->operator() (r - l * 4));

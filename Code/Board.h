@@ -24,8 +24,8 @@ struct OutOfRange : public std::exception {
 
 class Board{
 	
-
-protected:
+private:
+protected://need for the implement for ExpertDisplay
     static const int rows = 5, cols = 5;
 	std::string matrix[21]; //ecran meme
 	Card* cardmatrix[rows][cols]; //les cartes
@@ -33,13 +33,13 @@ protected:
 
 	//TEST
 	inline bool outOfRange(const Letter& l, const Number& n) const { return (l >= rows || l < 0 || n >= cols || n < 0); };
-	virtual void drawFaceUp(const Letter&, const Number&);//USE FOR EXPERT
-	virtual void drawFaceDown(const Letter&, const Number&);//USE FOR EXPERT
+	virtual void faceUp(const Letter&, const Number&);//USE FOR EXPERT
+	virtual void faceDown(const Letter&, const Number&);//USE FOR EXPERT
 	virtual void resetFunction();
 	virtual void print(std::ostream &os) const;
 public:
 	Board();
-	virtual ~Board();
+	virtual ~Board() {};
 	Board(const Board&) = delete;
 	Board& operator=(const Board&) = delete;
 

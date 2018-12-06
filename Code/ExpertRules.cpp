@@ -1,5 +1,6 @@
 #include "ExpertRules.h"
 bool ExpertRules::isValid(const Game& g) {
+
 	return false;
 }
 
