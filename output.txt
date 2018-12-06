@@ -1,0 +1,641 @@
+Memoarr, the board game. Implemented by Maxime & Valentin
+
+Press any key to START the game setup or 1 to how to play
+0
+
+SETUP
+This game have two displays:
+0 for normal
+1 for expert
+1
+Expert display choose
+
+This game have two differents set of rules:
+0 for normal
+1 for expert
+0
+Normal rule choose
+
+Select number of players: 2 to 4
+2
+Enter player 1 name
+Max
+Enter player 2 name
+Val
+START
+
+
+ROUND 1
+
+
+
+
+
+No more cards is available.
+
+Max : Top active
+Val : Right active
+
+Top player Max see his three middle fronts cards
+
+yyy rrr ppp
+yCy rPr pWp
+yyy rrr ppp
+
+A2  A3  A4
+
+Enter to continue.
+
+Right player Val see his three middle fronts cards
+
+ggg ggg ppp
+gWg gCg pOp
+ggg ggg ppp
+
+B5  C5  D5
+
+Enter to continue.
+
+
+
+
+
+No more cards is available.
+
+Max : Top active
+Val : Right active
+
+Max on the Top turn!
+Letter (A, B, C, D, E)
+A4
+Number 1, 2, 3, 4, 5
+B
+1, 2, 3, 4, or 5 ONLY!
+5
+
+rrr
+rOr
+rrr
+
+A5
+
+Max : Top active
+Val : Right active
+
+Val on the Right turn!
+Letter (A, B, C, D, E)
+D
+Number 1, 2, 3, 4, 5
+2
+
+rrr ppp
+rOr pPp
+rrr ppp
+
+A5  D2
+
+Max : Top active
+Val : Right inactive
+
+Max receive 4 rubies from winning this round
+
+
+ROUND 2
+
+
+
+
+
+No more cards is available.
+
+Max : Top active
+Val : Right active
+
+Top player Max see his three middle fronts cards
+
+yyy rrr ppp
+yCy rPr pWp
+yyy rrr ppp
+
+A2  A3  A4
+
+Enter to continue.
+A
+Right player Val see his three middle fronts cards
+
+ggg ggg ppp
+gWg gCg pOp
+ggg ggg ppp
+
+B5  C5  D5
+
+Enter to continue.
+5
+
+
+
+
+No more cards is available.
+
+Max : Top active
+Val : Right active
+
+Max on the Top turn!
+Letter (A, B, C, D, E)
+A
+Number 1, 2, 3, 4, 5
+5
+
+rrr
+rOr
+rrr
+
+A5
+
+Max : Top active
+Val : Right active
+
+Val on the Right turn!
+Letter (A, B, C, D, E)
+D
+Number 1, 2, 3, 4, 5
+5
+
+rrr ppp
+rOr pOp
+rrr ppp
+
+A5  D5
+
+Max : Top active
+Val : Right active
+
+Max on the Top turn!
+Letter (A, B, C, D, E)
+A
+Number 1, 2, 3, 4, 5
+4
+
+ppp rrr ppp
+pWp rOr pOp
+ppp rrr ppp
+
+A4  A5  D5
+
+Max : Top active
+Val : Right active
+
+Val on the Right turn!
+Letter (A, B, C, D, E)
+E
+Number 1, 2, 3, 4, 5
+2
+
+ppp rrr ppp ggg
+pWp rOr pOp gTg
+ppp rrr ppp ggg
+
+A4  A5  D5  E2
+
+Max : Top active
+Val : Right inactive
+
+Max receive 3 rubies from winning this round
+
+
+ROUND 3
+
+
+
+
+
+No more cards is available.
+
+Max : Top active
+Val : Right active
+
+Top player Max see his three middle fronts cards
+
+yyy rrr ppp
+yCy rPr pWp
+yyy rrr ppp
+
+A2  A3  A4
+
+Enter to continue.
+A
+Right player Val see his three middle fronts cards
+
+ggg ggg ppp
+gWg gCg pOp
+ggg ggg ppp
+
+B5  C5  D5
+
+Enter to continue.
+
+
+
+
+
+No more cards is available.
+
+Max : Top active
+Val : Right active
+
+Max on the Top turn!
+Letter (A, B, C, D, E)
+A
+Number 1, 2, 3, 4, 5
+4
+
+ppp
+pWp
+ppp
+
+A4
+
+Max : Top active
+Val : Right active
+
+Val on the Right turn!
+Letter (A, B, C, D, E)
+D
+Number 1, 2, 3, 4, 5
+5
+
+ppp ppp
+pWp pOp
+ppp ppp
+
+A4  D5
+
+Max : Top active
+Val : Right active
+
+Max on the Top turn!
+Letter (A, B, C, D, E)
+A
+Number 1, 2, 3, 4, 5
+1
+
+ppp ppp ppp
+pTp pWp pOp
+ppp ppp ppp
+
+A1  A4  D5
+
+Max : Top active
+Val : Right active
+
+Val on the Right turn!
+Letter (A, B, C, D, E)
+B
+Number 1, 2, 3, 4, 5
+1
+
+ppp ppp rrr ppp
+pTp pWp rCr pOp
+ppp ppp rrr ppp
+
+A1  A4  B1  D5
+
+Max : Top active
+Val : Right inactive
+
+Max receive 1 rubies from winning this round
+
+
+ROUND 4
+
+
+
+
+
+No more cards is available.
+
+Max : Top active
+Val : Right active
+
+Top player Max see his three middle fronts cards
+
+yyy rrr ppp
+yCy rPr pWp
+yyy rrr ppp
+
+A2  A3  A4
+
+Enter to continue.
+
+Right player Val see his three middle fronts cards
+
+ggg ggg ppp
+gWg gCg pOp
+ggg ggg ppp
+
+B5  C5  D5
+
+Enter to continue.
+
+
+
+
+
+No more cards is available.
+
+Max : Top active
+Val : Right active
+
+Max on the Top turn!
+Letter (A, B, C, D, E)
+B
+Number 1, 2, 3, 4, 5
+1
+
+rrr
+rCr
+rrr
+
+B1
+
+Max : Top active
+Val : Right active
+
+Val on the Right turn!
+Letter (A, B, C, D, E)
+A
+Number 1, 2, 3, 4, 5
+3
+
+rrr rrr
+rPr rCr
+rrr rrr
+
+A3  B1
+
+Max : Top active
+Val : Right active
+
+Max on the Top turn!
+Letter (A, B, C, D, E)
+E
+Number 1, 2, 3, 4, 5
+2
+
+rrr rrr ggg
+rPr rCr gTg
+rrr rrr ggg
+
+A3  B1  E2
+
+Max : Top inactive
+Val : Right active
+
+Val receive 1 rubies from winning this round
+
+
+ROUND 5
+
+
+
+
+
+No more cards is available.
+
+Max : Top active
+Val : Right active
+
+Top player Max see his three middle fronts cards
+
+yyy rrr ppp
+yCy rPr pWp
+yyy rrr ppp
+
+A2  A3  A4
+
+Enter to continue.
+
+Right player Val see his three middle fronts cards
+
+ggg ggg ppp
+gWg gCg pOp
+ggg ggg ppp
+
+B5  C5  D5
+
+Enter to continue.
+
+
+
+
+
+No more cards is available.
+
+Max : Top active
+Val : Right active
+
+Val on the Right turn!
+Letter (A, B, C, D, E)
+A
+Number 1, 2, 3, 4, 5
+1
+
+ppp
+pTp
+ppp
+
+A1
+
+Max : Top active
+Val : Right active
+
+Max on the Top turn!
+Letter (A, B, C, D, E)
+E
+Number 1, 2, 3, 4, 5
+2
+
+ppp ggg
+pTp gTg
+ppp ggg
+
+A1  E2
+
+Max : Top active
+Val : Right active
+
+Val on the Right turn!
+Letter (A, B, C, D, E)
+A
+Number 1, 2, 3, 4, 5
+1
+Card is already face up.
+Val on the Right turn!
+Letter (A, B, C, D, E)
+A
+Number 1, 2, 3, 4, 5
+4
+
+ppp ppp ggg
+pTp pWp gTg
+ppp ppp ggg
+
+A1  A4  E2
+
+Max : Top active
+Val : Right inactive
+
+Max receive 2 rubies from winning this round
+
+
+ROUND 6
+
+
+
+
+
+No more cards is available.
+
+Max : Top active
+Val : Right active
+
+Top player Max see his three middle fronts cards
+
+yyy rrr ppp
+yCy rPr pWp
+yyy rrr ppp
+
+A2  A3  A4
+
+Enter to continue.
+
+Right player Val see his three middle fronts cards
+
+ggg ggg ppp
+gWg gCg pOp
+ggg ggg ppp
+
+B5  C5  D5
+
+Enter to continue.
+
+
+
+
+
+No more cards is available.
+
+Max : Top active
+Val : Right active
+
+Max on the Top turn!
+Letter (A, B, C, D, E)
+A
+Number 1, 2, 3, 4, 5
+1
+
+ppp
+pTp
+ppp
+
+A1
+
+Max : Top active
+Val : Right active
+
+Val on the Right turn!
+Letter (A, B, C, D, E)
+A
+Number 1, 2, 3, 4, 5
+2
+
+ppp yyy
+pTp yCy
+ppp yyy
+
+A1  A2
+
+Max : Top active
+Val : Right inactive
+
+Max receive 1 rubies from winning this round
+
+
+ROUND 7
+
+
+
+
+
+No more cards is available.
+
+Max : Top active
+Val : Right active
+
+Top player Max see his three middle fronts cards
+
+yyy rrr ppp
+yCy rPr pWp
+yyy rrr ppp
+
+A2  A3  A4
+
+Enter to continue.
+
+Right player Val see his three middle fronts cards
+
+ggg ggg ppp
+gWg gCg pOp
+ggg ggg ppp
+
+B5  C5  D5
+
+Enter to continue.
+
+
+
+
+
+No more cards is available.
+
+Max : Top active
+Val : Right active
+
+Max on the Top turn!
+Letter (A, B, C, D, E)
+E
+Number 1, 2, 3, 4, 5
+2
+
+ggg
+gTg
+ggg
+
+E2
+
+Max : Top active
+Val : Right active
+
+Val on the Right turn!
+Letter (A, B, C, D, E)
+D
+Number 1, 2, 3, 4, 5
+1
+
+yyy ggg
+yWy gTg
+yyy ggg
+
+D1  E2
+
+Max : Top active
+Val : Right inactive
+
+Max receive 2 rubies from winning this round
+Game is finished
+Scores:
+Val : 1 rubies
+
+Max : 13 rubies
+
+The winner is Max with 13 rubies.
