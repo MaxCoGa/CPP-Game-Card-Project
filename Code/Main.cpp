@@ -149,7 +149,7 @@ std::cout << std::endl;
 			}
 			else if (!std::cin.fail() && display == 1) {
 				std::cout << "Expert display choose\n" << std::endl;
-				//board = new Board();//change to new ExpertDisplay();
+				board = new ExpertDisplay();//NEW
 				break;
 
 			}
