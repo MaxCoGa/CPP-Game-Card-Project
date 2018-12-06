@@ -174,8 +174,10 @@ std::cout << std::endl;
 			}
 			else if (!std::cin.fail() && rule == 1) {
 				std::cout << "Expert rule choose\n" << std::endl;
-				//game = new Game(*board);
-				//rules = new Rules();//change to new ExpertRules();
+				game = new Game(*board);
+				ExpertRules *expertrules = new ExpertRules();//NEW
+				expertrules->set(board);
+				rules = expertrules;
 				break;
 
 			}

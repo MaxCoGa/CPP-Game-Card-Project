@@ -9,17 +9,13 @@ class ExpertRules : public Rules
 {
 private:
 	Board * board;
-
-    //Crab='C', Penguin='P', Octopus='O', Walrus='W', Turtle='T'
-    void crab();
-    void penguin();
-	void octopus();
-    void walrus();
-    void turtle();
+	Card *block = nullptr;
 public:
 	ExpertRules() : Rules() {};
 	~ExpertRules() {};
 	bool isValid(const Game& g);//redefined from Rules!!
+	bool roundOver(const Game& g);
+	void set(Board *b) { board = b; };
 };
 
 #endif
