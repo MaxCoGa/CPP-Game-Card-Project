@@ -10,11 +10,13 @@
 
 class RewardDeck : public Deck<Reward>{//meme structure que CardDeck juste avec les noms Reward au lieu de Card
     private:
+
+		static RewardDeck* rd;
         static std::vector<Reward*> deck;
-	    int lastCard = -1;
+	    int size = -1;
 
 
-		RewardDeck() {};
+		RewardDeck();
 
     public:
 		~RewardDeck();
@@ -34,34 +36,28 @@ using std::endl;
 static void test_rewarddeck() {
 	std::cout << std::endl << "TEST REWARDDECK" << std::endl;
 	RewardDeck *rd = &RewardDeck::make_RewardDeck();
-	cout << "Print rewards" << endl;
+
+	std::cout << "Shuffle:" << std::endl;
+	rd->shuffle();
 	while (!rd->isEmpty()) {
 		Reward* r = rd->getNext();
-		cout << r->operator int() << ", ";
+		std::cout << *r << ", ";
 	}
-	cout << endl << endl;
-	cout << "Check if deck is empty." << endl;
 	if (rd->getNext() == nullptr) {
-		cout << "Null pointer returned. Deck is empty.";
+		std::cout << "nullptr"<< std::endl;
 	}
 	else {
-		cout << "Null pointer NOT returned. Error is deck size.";
-	}
-	cout << endl << endl;
-	cout << "Shuffle deck check." << endl;
-	cout << "Original:" << endl;
-	while (!rd->isEmpty()) {
-		Reward* r = rd->getNext();
-		cout << r->operator int() << ", ";
-	}
-	cout << endl;
-	rd->shuffle();
-	cout << "Shuffle test:" << endl;
-	while (!rd->isEmpty()) {
-		Reward* r = rd->getNext();
-		cout << r->operator int() << ", ";
+		std::cout << "not empty"<< std::endl;
 	}
 
+	std::cout << "New deck:" << std::endl;
+	RewardDeck* rd2 = &RewardDeck::make_RewardDeck();
+	if (rd2->getNext() == nullptr) {
+		std::cout << "nullptr" << std::endl;
+	}
+	else {
+		std::cout << std::endl << "new deck existed!!! should not have WORK!!!!" << std::endl;
+	}
 }
 #endif
 #endif

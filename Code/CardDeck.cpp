@@ -35,15 +35,17 @@ CardDeck::~CardDeck() {
 }
 
 void CardDeck::shuffle() {//shuffle finish
-	srand(unsigned(time(NULL)));
-	std::random_shuffle(deck.begin(), deck.end());//std::random_shuffle is use CHECK!
+	if (!deck.empty()) {
+		srand(unsigned(time(NULL)));
+		std::random_shuffle(deck.begin(), deck.end());//std::random_shuffle is use CHECK!
+	}
 	
 }
 
 
 
 Card* CardDeck::getNext() {
-	//si le deck(card/reward) est vide -> nullptr, sinon en 
+	//si le deck(card/reward) est vide -> nullptr, sinon on réduit son size en retournant la card/reward enlevé
 	if (isEmpty()) {
 		return nullptr;
 	}
@@ -58,6 +60,7 @@ Card* CardDeck::getNext() {
 
 
 bool CardDeck::isEmpty() const {
+	//si le deck est vide 
 	if (size < 0) {
 		return true;
 	}

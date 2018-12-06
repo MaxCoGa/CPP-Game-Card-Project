@@ -1,11 +1,12 @@
 #include "rewarddeck.h"
-#include <algorithm>
+#include <algorithm>//utilise pour random_shuffle
+#include <random>
+#include<ctime>
 
 
 std::vector<Reward*> RewardDeck::deck;
-
-RewardDeck& RewardDeck::make_RewardDeck() {
-
+RewardDeck* RewardDeck::rd = nullptr;//Pour le singleton
+RewardDeck::RewardDeck() {
 	//3 1 rubies
 	for (int i = 0; i < 3; ++i) {
 		deck.push_back(new Reward(1));
@@ -25,9 +26,15 @@ RewardDeck& RewardDeck::make_RewardDeck() {
 	for (int i = 0; i < 1; ++i) {
 		deck.push_back(new Reward(4));
 	}
-	RewardDeck* rd = new RewardDeck();
-	rd->lastCard = deck.size() - 1;
-	return *(rd);
+}
+RewardDeck& RewardDeck::make_RewardDeck() {
+
+
+	if (RewardDeck::rd == nullptr) {
+		RewardDeck::rd = new RewardDeck();
+		rd->size = deck.size() - 1;
+	}
+	return *rd;
 }
 
 RewardDeck::~RewardDeck() {
@@ -38,7 +45,11 @@ RewardDeck::~RewardDeck() {
 }
 
 void RewardDeck::shuffle() {
-	if (!deck.empty()) std::random_shuffle(deck.begin(), deck.end());
+	if (!deck.empty()) {
+		srand(unsigned(time(NULL)));
+		std::random_shuffle(deck.begin(), deck.end());//std::random_shuffle is use CHECK!
+	}
+
 }
 
 Reward* RewardDeck::getNext() {
@@ -46,14 +57,14 @@ Reward* RewardDeck::getNext() {
 		return nullptr;
 	}
 	else {
-		Reward* c = deck[lastCard];
-		lastCard--;
+		Reward* c = deck[size];
+		size--;
 		return c;
 	}
 }
 
 bool RewardDeck::isEmpty() const {
-	if (lastCard < 0) {
+	if (size < 0) {
 		return true;
 	}
 	else {

@@ -35,46 +35,27 @@ class CardDeck : public Deck<Card>{
 static void test_carddeck() {
 	std::cout << std::endl << "TEST CARDDECK" << std::endl;
 	CardDeck* cd = &CardDeck::make_CardDeck();
-	//test unshuffled card deck
-	std::cout << "print in order:" << std::endl;
-	while (!cd->isEmpty()) {
-		Card& c = *(cd->getNext());
-		std::cout << c(1) << " ";
-	}
-	std::cout << std::endl;
-	//test nullptr return
-	if (cd->getNext() == nullptr) {
-		std::cout << std::endl << "nullptr" << std::endl;
-	}
-	else {
-		std::cout << std::endl << "no nullptr in empty deck" << std::endl;
-	}
-	//test shuffled card deck
-	std::cout << std::endl;
+
+	std::cout << "Shuffle:" << std::endl;
 	cd->shuffle();
-	std::cout << "print in order" << std::endl;
 	while (!cd->isEmpty()) {
 		Card& c = *(cd->getNext());
-		std::cout << c(1) << " ";
+		std::cout << c(1) << ", ";
 	}
-	std::cout << std::endl;
-	//test nullptr return after shuffle
 	if (cd->getNext() == nullptr) {
-		std::cout << std::endl << "nullptr" << std::endl;
+		std::cout << "nullptr" << std::endl;
 	}
 	else {
-		std::cout << std::endl << "empty deck!" << std::endl;
+		std::cout << "not empty" << std::endl;
 	}
-	//attempt to create another card deck and use it
+
+	std::cout << "New deck:" << std::endl;
 	CardDeck* cd2 = &CardDeck::make_CardDeck();
-	//test nullptr return
-	std::cout << std::endl << "Not possible to create an another deck" << std::endl;
-	std::cout << "return of the same card -> nullptr" << std::endl;
 	if (cd2->getNext() == nullptr) {
-		std::cout << std::endl << "next card in empty deck -> nullptr" << std::endl;
+		std::cout<< "nullptr" << std::endl;
 	}
 	else {
-		std::cout << std::endl << "try to take card anyway" << std::endl;
+		std::cout << std::endl << "new deck existed!!! should not have WORK!!!!" << std::endl;
 	}
 }
 #endif
