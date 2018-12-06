@@ -17,14 +17,14 @@ private:
 	//int nRow = 3;
 	//char face, colour;
 
-#if TEST_CARD == 0
+#if TEST == 0
 	Card(FaceAnimal animal, FaceBackground background) :
 		_animal(animal), _background(background)
 	{}
 #endif
 
 public:
-#if TEST_CARD == 1
+#if TEST == 1
 		Card(FaceAnimal animal, FaceBackground background) :
 			_animal(animal), _background(background)
 		{}
@@ -72,7 +72,7 @@ Card c(Penguin, Red);
 	}
 	*/
 
-#if TEST_CARD
+#if TEST
 //enum FaceAnimal { Crab = 'C', Penguin = 'P', Octopus = 'O', Walrus = 'W', Turtle = 'T' };
 //enum FaceBackground { Red = 'r', Green = 'g', Purple = 'p', Blue = 'b', Yellow = 'y' };
 static void test_card() {

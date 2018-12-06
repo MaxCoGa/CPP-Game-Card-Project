@@ -17,7 +17,7 @@ class CardDeck : public Deck<Card>{
 
 		static CardDeck* cd;
         static std::vector<Card*> deck;
-        int lastCard = -1;
+        int size = -1;
 		
     public:
 		CardDeck();
@@ -31,7 +31,7 @@ class CardDeck : public Deck<Card>{
         virtual bool isEmpty() const;
 };
 
-#if TEST_CARDDECK
+#if TEST
 static void test_carddeck() {
 	std::cout << std::endl << "TEST CARDDECK" << std::endl;
 	CardDeck* cd = &CardDeck::make_CardDeck();

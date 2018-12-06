@@ -52,27 +52,23 @@ void howToPlay(){
 int main(){
 
 //unit class test
-#if TEST_PLAYER
+#if TEST == 1
+
 	std::cout << std::endl;
 	test_player();
-#endif
-#if TEST_CARD
+
 	std::cout << std::endl;
 	test_card();
-#endif
 
-#if TEST_REWARD
 std::cout << std::endl;
 	test_reward();
-#endif
-#if TEST_CARDDECK
+
 std::cout << std::endl;
 	test_carddeck();
-#endif
-#if TEST_REWARDDECK
+
 std::cout << std::endl;
 	test_rewarddeck();
-#endif
+
 /*
 #if TEST_BOARD
 std::cout << std::endl;
@@ -95,9 +91,9 @@ std::cout << std::endl;
 	test_expertrules();
 #endif
 */
-
+#endif//END OF TESTING
 //Game
-#if MAIN
+#if TEST == 0
 	while (true) {//big loop to make the game playable again after 7 rounds //Maybe?
 		//ADD counter for number of game win or loss it may be an array/vector of win or loss
 

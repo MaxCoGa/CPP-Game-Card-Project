@@ -5,7 +5,7 @@
  *
  *
  *
- * @author Maxime Cote-Gagne(8851539) & Valentin Magot
+ * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
 
@@ -50,7 +50,7 @@ class Player {
 
 
 
-#if TEST_PLAYER
+#if TEST
 static void test_player() {
 	std::cout << "PLAYER CLASS TEST" << std::endl;
 	Side side = top;

@@ -10,19 +10,18 @@ private:
 	//Reward(int number);
 public:
 	Reward(int number);
-	
 	//utilise pour RewardDeck
 	Reward(const Reward&) = delete;
 	Reward& operator=(const Reward&) = delete;
-	//
+	//SOME TESTING//
 
 	friend std::ostream &operator << (std::ostream &os, const Reward &r);
-	operator int()const{//utilise pour add au rubie d'un joueur
+	operator int()const{//utilise pour add un ruby d'un joueur
 		return _number;
 	}
 };
 
-#if TEST_REWARD
+#if TEST
 static void test_reward() {
 	std::cout << std::endl << "TEST REWARD"<< std::endl;
 	Reward r1(0), r2(5), r3(3);

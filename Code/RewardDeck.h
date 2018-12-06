@@ -27,7 +27,7 @@ class RewardDeck : public Deck<Reward>{//meme structure que CardDeck juste avec 
         virtual Reward* getNext();
         virtual bool isEmpty() const;
 };
-#if TEST_REWARDDECK
+#if TEST
 #include <iostream>
 using std::cout;//REMOVE
 using std::endl;
