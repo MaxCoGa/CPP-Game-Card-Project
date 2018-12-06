@@ -53,7 +53,7 @@ static void test_rewarddeck() {
 	std::cout << "New deck:" << std::endl;
 	RewardDeck* rd2 = &RewardDeck::make_RewardDeck();
 	if (rd2->getNext() == nullptr) {
-		std::cout << "nullptr" << std::endl;
+		std::cout << "nullptr, deck already created" << std::endl;
 	}
 	else {
 		std::cout << std::endl << "new deck existed!!! should not have WORK!!!!" << std::endl;

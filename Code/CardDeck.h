@@ -52,7 +52,7 @@ static void test_carddeck() {
 	std::cout << "New deck:" << std::endl;
 	CardDeck* cd2 = &CardDeck::make_CardDeck();
 	if (cd2->getNext() == nullptr) {
-		std::cout<< "nullptr" << std::endl;
+		std::cout<< "nullptr, deck already created" << std::endl;
 	}
 	else {
 		std::cout << std::endl << "new deck existed!!! should not have WORK!!!!" << std::endl;
