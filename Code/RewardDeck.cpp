@@ -1,5 +1,5 @@
 /**
- * Projet 4 CSI 2772[A] Robert Laganiere
+ * Projet CSI 2772[A] Robert Laganiere
  *
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
@@ -12,6 +12,8 @@
 
 std::vector<Reward*> RewardDeck::deck;
 RewardDeck* RewardDeck::rd = nullptr;//Pour le singleton
+
+/*Create a deck of reward in a deck vector*/
 RewardDeck::RewardDeck() {
 	//3 1 rubies
 	for (int i = 0; i < 3; ++i) {
@@ -33,6 +35,8 @@ RewardDeck::RewardDeck() {
 		deck.push_back(new Reward(4));
 	}
 }
+
+/*Singleton return the same deck everytime*/
 RewardDeck& RewardDeck::make_RewardDeck() {
 
 
@@ -43,6 +47,7 @@ RewardDeck& RewardDeck::make_RewardDeck() {
 	return *rd;
 }
 
+/*Destroy de deck and clear space*/
 RewardDeck::~RewardDeck() {
 	for (auto &i : deck) {
 		delete i;
@@ -50,6 +55,7 @@ RewardDeck::~RewardDeck() {
 	deck.clear();
 }
 
+/*Shuffle the rubies in the deck*/
 void RewardDeck::shuffle() {
 	if (!deck.empty()) {
 		srand(unsigned(time(NULL)));
@@ -58,6 +64,9 @@ void RewardDeck::shuffle() {
 
 }
 
+/*return the next reward by pointer
+*will return nullptr if no more rewards are available
+*/
 Reward* RewardDeck::getNext() {
 	if (isEmpty()) {
 		return nullptr;
@@ -69,6 +78,7 @@ Reward* RewardDeck::getNext() {
 	}
 }
 
+/*returns true if the deck is empty*/
 bool RewardDeck::isEmpty() const {
 	if (size < 0) {
 		return true;

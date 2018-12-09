@@ -1,6 +1,7 @@
 /**
- * Projet 4 CSI 2772[A] Robert Laganiere
- *
+ * Projet CSI 2772[A] Robert Laganiere
+ * RwardDeck.h
+ * derived from Deck<Reward> with the corresponding properties to CardDeck
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
