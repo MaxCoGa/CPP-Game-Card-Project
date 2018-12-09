@@ -1,6 +1,7 @@
 /**
- * Projet 4 CSI 2772[A] Robert Laganiere
- *
+ * Projet CSI 2772[A] Robert Laganiere
+ * Rukes.h
+ * Check if a selection of a player is valid
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
