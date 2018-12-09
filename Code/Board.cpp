@@ -1,19 +1,22 @@
 /**
- * Projet 4 CSI 2772[A] Robert Laganiere
- *
+ * Projet CSI 2772[A] Robert Laganiere
+ * Board.cpp
+ * 
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
 #include "Board.h"
 #include "CardDeck.h"
-
+/*Board constructor, reset the current board and make a card deck and shuffle it*/
 Board::Board() {
 	reset();
 	CardDeck& cd = CardDeck::make_CardDeck();
+
 	if (cd.isEmpty()){
 		throw NoMoreCards();
 	}
 	cd.shuffle();
+
 	int i = 0;
 	while (!cd.isEmpty()) {
 		cardmatrix[i / 5][i % 5] = cd.getNext();
@@ -21,6 +24,10 @@ Board::Board() {
 	}
 }
 
+/* returns true if the card at a given position is face up. 
+ *Letter and Number are enumerations. 
+ *Throws an exception of type OutOfRange if an invalid Letter and Number combination was given.
+ */
 bool Board::isFaceUp(const Letter& l, const Number& n) const {
 	if (outOfRange(l, n)) {
 		throw OutOfRange();
@@ -33,24 +40,45 @@ bool Board::isFaceUp(const Letter& l, const Number& n) const {
 	}
 }
 
+/* changes the state of the specified card return false if card was up already. 
+ * Throws an exception of type OutOfRange if an invalid Letter and Number combination was given.
+ */
 bool Board::turnFaceUp(const Letter& l, const Number& n) {
-	if (outOfRange(l, n))
+	if (outOfRange(l, n)) {
 		throw OutOfRange();
-	faceUp(l, n);
-	if (cardSide[l][n])
+	}
+	
+	//turn up the card
+	for (int r = l * 4; r < l * 4 + 3; ++r) {
+		Card* c = cardmatrix[l][n];
+		matrix[r].replace(n * 4 + 2, 3, c->operator() (r - l * 4));
+	}
+
+	if (cardSide[l][n]) {
 		return false;
+	}
 	else {
 		cardSide[l][n] = UP;
 		return true;
 	}
 }
 
+/* changes the state of the specified card return false if card was down already. 
+ * Throws an exception of type OutOfRange if an invalid Letter and Number combination was given.
+ */
 bool Board::turnFaceDown(const Letter& l, const Number& n) {
-	if (outOfRange(l, n))
+	if (outOfRange(l, n)) {
 		throw OutOfRange();
-	faceDown(l, n);
-	if (!cardSide[l][n])
+	}
+
+	//turn down the card
+	for (int r = l * 4; r < l * 4 + 3; ++r) {
+		matrix[r].replace(n * 4 + 2, 3, "ZZZ");
+	}
+
+	if (!cardSide[l][n]) {
 		return false;
+	}
 	else {
 		cardSide[l][n] = DOWN;
 		return true;
@@ -58,11 +86,8 @@ bool Board::turnFaceDown(const Letter& l, const Number& n) {
 }
 
 //RESET//
+/* changes the state to all cards to be face down.  */
 void Board::reset() {
-	resetFunction();
-}
-
-void Board::resetFunction() {
 	for (int i = 0; i < 25; ++i) {
 		cardSide[i / 5][i % 5] = DOWN;
 	}
@@ -99,13 +124,11 @@ void Board::resetFunction() {
 		}
 	}
 
-
-
-}//RESET//
+}
 
 //TODO
 std::ostream& operator<<(std::ostream &os, const Board &b) {
-	b.print(os);
+	b.print(os);//print the object b(board) to os
 	return os;
 }
 void Board::print(std::ostream &os) const {
@@ -114,32 +137,23 @@ void Board::print(std::ostream &os) const {
 		os << "\n";
 	}
 }
+
+
 //REV 2.0
+/* returns a pointer to the card at a given location. 
+ * Throws an exception of type OutOfRange if an invalid Letter and Number combination was given.
+ */
 Card* Board::getCard(const Letter& l, const Number& n) const {
 	if (outOfRange(l, n))
 		throw OutOfRange();
 	else
 		return cardmatrix[l][n];
 }
-
+/* updates the pointer to card at a given location. 
+ * Throws an exception of type OutOfRange if an invalid Letter and Number combination was given. 
+ */
 void Board::setCard(const Letter& l, const Number& n, Card* c) {
 	if (outOfRange(l, n))
 		throw OutOfRange();
 	cardmatrix[l][n] = c;
 }
-
-//CHANGE CARDSIDE
-void Board::faceDown(const Letter& l, const Number& n) {
-	for (int r = l * 4; r < l * 4 + 3; ++r) {
-		matrix[r].replace(n * 4 + 2, 3, "ZZZ");
-	}
-}
-
-void Board::faceUp(const Letter& l, const Number& n) {
-	for (int r = l * 4; r < l * 4 + 3; ++r) {
-		Card* c = cardmatrix[l][n];
-		matrix[r].replace(n * 4 + 2, 3, c->operator() (r - l * 4));
-	}
-}
-
-

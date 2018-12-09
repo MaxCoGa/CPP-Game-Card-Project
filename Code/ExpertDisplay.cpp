@@ -37,7 +37,7 @@
     }
 
     
-	void ExpertDisplay::resetFunction() {
+	void ExpertDisplay::reset() {
 		for (int i = 0; i < rows; ++i) {
 			for (int j = 0; j < cols; ++j) {
 				cardSide[i][j] = DOWN;
@@ -45,3 +45,15 @@
 		}
 
     }
+
+	void ExpertDisplay::faceUp(const Letter& l , const Number& n ) {
+		for (int r = l * 4; r < l * 4 + 3; ++r) {
+			Card* c = cardmatrix[l][n];
+			matrix[r].replace(n * 4 + 2, 3, c->operator() (r - l * 4));
+		}
+	}
+	void ExpertDisplay::faceDown(const Letter& l , const Number& n) {
+		for (int r = l * 4; r < l * 4 + 3; ++r) {
+			matrix[r].replace(n * 4 + 2, 3, "ZZZ");
+		}
+	}

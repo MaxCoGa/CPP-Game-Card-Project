@@ -88,7 +88,7 @@ void Game::next() {//add reward
 			int tmp2 = p->getNRubies();
 			int tmp3 = tmp2 - tmp1;
 
-			std::cout << p->getName() << " receive " << tmp3 << " rubies from winning this round" << std::endl;
+			//std::cout << p->getName() << " receive " << tmp3 << " rubies from winning this round" << std::endl;
 
 		}
 	}

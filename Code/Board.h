@@ -4,18 +4,21 @@
 #include <iostream>
 #include "CardDeck.h"
 /**
- * Projet 4 CSI 2772[A] Robert Laganiere
- *
+ * Projet CSI 2772[A] Robert Laganiere
+ * Board.h
+ * holds an array of strings corresponding to the screen display of the game
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
 #include <iostream>
 #include <exception>
-
+//ENUM
 enum Letter { A, B, C, D, E};
 enum Number { ONE, TWO, THREE, FOUR, FIVE };
 enum CardSide {DOWN, UP};
 
+
+//Exceptions
 struct NoMoreCards : public std::exception {
 	const char * what() const throw () {
 		return "NoMoreCards exception: no cards left in the deck";
@@ -39,9 +42,6 @@ protected://need for the implement for ExpertDisplay
 
 	//TEST
 	inline bool outOfRange(const Letter& l, const Number& n) const { return (l >= rows || l < 0 || n >= cols || n < 0); };
-	virtual void faceUp(const Letter&, const Number&);//USE FOR EXPERT
-	virtual void faceDown(const Letter&, const Number&);//USE FOR EXPERT
-	virtual void resetFunction();
 	virtual void print(std::ostream &os) const;
 public:
 	Board();
@@ -52,8 +52,8 @@ public:
 	bool isFaceUp(const Letter&, const Number&) const;
 	bool turnFaceUp(const Letter&, const Number&);
 	bool turnFaceDown(const Letter&, const Number&);
-	void reset();
 
+	virtual void reset();
 
 	//void print(std::ostream &os) const;//test
 	friend std::ostream& operator<<(std::ostream &os, const Board &b);
