@@ -1,6 +1,8 @@
 /**
- * Projet 4 CSI 2772[A] Robert Laganiere
- *
+ * Projet CSI 2772[A] Robert Laganiere
+ * Game.h
+ * Encapsulates the current state of the game
+ * Print the current state of the game
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
@@ -17,9 +19,9 @@
 /*
  *exception
  */
-struct NoPlayer : public std::exception {
+struct InvalidPlayer : public std::exception {
 	const char * what() const throw () {
-		return "NoPlayer exception: no player on the called side!";
+		return "InvalidPlayer exception: no player on this side!";
 	}
 };
 
@@ -47,6 +49,8 @@ public:
 	inline const Card* getPreviousCard() const { return previousCard; }
 	inline const Card* getCurrentCard() const { return currentCard; }
 	void setCurrentCard(const Card*);
+
+	//Addition to the Game object
 	Card* getCard(const Letter&, const Number&) const;
 	void setCard(const Letter&, const Number&, Card*);
 	

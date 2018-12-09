@@ -74,7 +74,7 @@ bool Rules::roundOver(const Game& g) {
 				active.push_back(player);
 			}
 		}
-		catch (NoPlayer e) {
+		catch (InvalidPlayer e) {
 			//throw "No valid players from Game object in Rules object!";
 		}
 	}
@@ -115,7 +115,7 @@ const Player& Rules::getNextPlayer(const Game& g) {
 				player == nullptr;
 			}
 		}
-		catch (NoPlayer e) { //exception
+		catch (InvalidPlayer e) { //exception
 			size--;
 			if (size == 0) {
 				throw "No valid players from Game object in Rules object!";

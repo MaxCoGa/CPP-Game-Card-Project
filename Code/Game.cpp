@@ -1,22 +1,24 @@
 /**
- * Projet 4 CSI 2772[A] Robert Laganiere
- *
+ * Projet CSI 2772[A] Robert Laganiere
+ * Game.cpp
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
 #include "game.h"
 
+/*make a RewardDeck and shuffle it*/
 Game::Game(Board& b) : rd(RewardDeck::make_RewardDeck()), board(b) {
 	rd.shuffle();
 }
 
-Game::~Game()
-{
+/*Destroy all players in the game*/
+Game::~Game(){
 	for (auto i : players) {
 		delete i;
 	}
 }
 
+/*adds a Player to this game*/
 void Game::addPlayer(const Player& p) {
 	bool playerPresent = false;
 	for (auto &ep : players) {
@@ -31,28 +33,34 @@ void Game::addPlayer(const Player& p) {
 	}
 }
 
+/*get the player from the requested side*/
 Player& Game::getPlayer(Side s) const {
-	//ensure requested player is present
-	if (s < players.size() && players[s] != nullptr) {
+	if (s < players.size() && players[s] != nullptr) {//check if the player side is not nullptr of a player
 		return *(players[s]);
 	}
 	else {
-		throw NoPlayer();
+		throw InvalidPlayer();
 	}
 }
 
+
+
+/*set the previous card to the current one and the current to the one call*/
 void Game::setCurrentCard(const Card* c) {
 	previousCard = currentCard;
 	currentCard = c;
 }
 
+/*Get a card from the board*/
 Card* Game::getCard(const Letter& l, const Number& n) const {
 	return board.getCard(l, n);
 }
 
+/*set a card in the board*/
 void Game::setCard(const Letter& l, const Number& n, Card* c) {
 	board.setCard(l, n, c);
 }
+
 
 
 //OSTREAM
@@ -66,6 +74,8 @@ std::ostream& operator<< (std::ostream& os, const Game& g) {
 	return os;
 }
 
+
+/* Use to reset everything in game, increasing the round counter andgive reward to the last active player, also reputting every player active after one round*/
 void Game::next() {//add reward
 	previousCard = 0;
 	currentCard = 0;
