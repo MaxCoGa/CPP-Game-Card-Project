@@ -1,6 +1,8 @@
 /**
- * Projet 4 CSI 2772[A] Robert Laganiere
- *
+ * Projet CSI 2772[A] Robert Laganiere
+ * Reward.h
+ * can take one of four possible values from 1 to 4 rubies.
+ * A reward must also be printable with the insertion operator cout << reward.
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
@@ -14,17 +16,19 @@ class Reward{
 private:
 	int _number;
 	//Reward(int number);
+	Reward() {};
+
 public:
+
 	Reward(int number);
-	//utilise pour RewardDeck
 	Reward(const Reward&) = delete;
 	Reward& operator=(const Reward&) = delete;
 	//SOME TESTING//
 
 	friend std::ostream &operator << (std::ostream &os, const Reward &r);
-	operator int()const{//utilise pour add un ruby d'un joueur
-		return _number;
-	}
+
+	//REV 2.0
+	operator int()const;
 };
 
 #if TEST

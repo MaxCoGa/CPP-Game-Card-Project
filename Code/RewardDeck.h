@@ -14,9 +14,9 @@
 #include <vector>
 #include <iterator>
 #include <iostream>
-
-class RewardDeck : public Deck<Reward>{//meme structure que CardDeck juste avec les noms Reward au lieu de Card
-    private:
+class Reward;
+class RewardDeck : public Deck<Reward>{//meme structure que CardDeck juste avec les noms Reward au lieu de Card    
+private:
 
 		static RewardDeck* rd;
         static std::vector<Reward*> deck;
