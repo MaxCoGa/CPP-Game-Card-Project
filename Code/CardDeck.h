@@ -1,6 +1,6 @@
 /**
- * Projet 4 CSI 2772[A] Robert Laganiere
- *
+ * Projet CSI 2772[A] Robert Laganiere
+ *	derived from Deck<Card>
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
@@ -24,9 +24,12 @@ class CardDeck : public Deck<Card>{
 		static CardDeck* cd;
         static std::vector<Card*> deck;
         int size = -1;
+
+		CardDeck();
+
 		
     public:
-		CardDeck();
+
         ~CardDeck();
         CardDeck(const CardDeck& cd) = delete;
         CardDeck& operator= (const CardDeck& cd) = delete;

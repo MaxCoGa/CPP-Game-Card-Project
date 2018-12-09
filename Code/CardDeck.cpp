@@ -11,6 +11,7 @@
 std::vector<Card*> CardDeck::deck;
 CardDeck* CardDeck::cd = nullptr;//Pour le singleton
 
+/*Create a deck of card in a deck vector*/
 CardDeck::CardDeck(){
 	for (auto colour : { FaceBackground::Blue, FaceBackground::Green, FaceBackground::Purple, FaceBackground::Red, FaceBackground::Yellow }) {
 		for (auto animal : { FaceAnimal::Crab, FaceAnimal::Octopus, FaceAnimal::Penguin, FaceAnimal::Turtle, FaceAnimal::Walrus }) {
@@ -20,7 +21,8 @@ CardDeck::CardDeck(){
 	}
 }
 
-CardDeck& CardDeck::make_CardDeck() {//make factory 
+/*Singleton*/
+CardDeck& CardDeck::make_CardDeck() {//make factory, review after the demo with Joel
 
 	if (CardDeck::cd == nullptr) {
 		CardDeck::cd = new CardDeck();		
@@ -32,6 +34,7 @@ CardDeck& CardDeck::make_CardDeck() {//make factory
 
 }
 
+/*destroy all card in deck and clear space*/
 CardDeck::~CardDeck() {
 	//delete cd;
 	for (auto &i : deck) {
@@ -40,6 +43,7 @@ CardDeck::~CardDeck() {
 	deck.clear();
 }
 
+/*shuffle the deck of card*/
 void CardDeck::shuffle() {//shuffle finish
 	if (!deck.empty()) {
 		srand(unsigned(time(NULL)));
@@ -49,7 +53,9 @@ void CardDeck::shuffle() {//shuffle finish
 }
 
 
-
+/*return the next card by pointer
+*will return nullptr if no more cards are available
+*/
 Card* CardDeck::getNext() {
 	//si le deck(card/reward) est vide -> nullptr, sinon on réduit son size en retournant la card/reward enlevé
 	if (isEmpty()) {
@@ -64,7 +70,7 @@ Card* CardDeck::getNext() {
 
 
 
-
+/*returns true if the deck is empty*/
 bool CardDeck::isEmpty() const {
 	//si le deck est vide 
 	if (size < 0) {

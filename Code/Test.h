@@ -11,7 +11,7 @@
 #ifndef TEST_H
 #define TEST_H
 
-#define TEST (0)
+#define TEST (1)
 
 
 
