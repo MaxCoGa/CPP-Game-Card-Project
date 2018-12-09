@@ -1,6 +1,6 @@
 /**
  * Projet CSI 2772[A] Robert Laganiere
- *
+ * RewardDeck.cpp
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
