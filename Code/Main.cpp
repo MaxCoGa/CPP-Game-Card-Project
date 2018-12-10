@@ -172,16 +172,17 @@ std::cout << std::endl;
 		while (true) {
 			//std::cout << "RULES LOOP" << std::endl;
 			std::cin >> rule;
+			game = new Game(*board);
 			if (!std::cin.fail() && rule == 0) {
 				std::cout << "Normal rule choose\n" << std::endl;
-				game = new Game(*board);
+				//game = new Game(*board);
 				rules = new Rules();
 				break;
 			}
 			else if (!std::cin.fail() && rule == 1) {
 				std::cout << "Expert rule choose\n" << std::endl;
-				game = new Game(*board);
-				ExpertRules *expertrules = new ExpertRules();//NEW
+				//game = new Game(*board);
+				ExpertRules *expertrules= new ExpertRules();//NEW
 				expertrules->set(board);
 				rules = expertrules;
 				break;
@@ -354,6 +355,7 @@ std::cout << std::endl;
 						std::cin >> tN;
 						if (!std::cin.fail() && (tN == 1 || tN == 2 || tN == 3 || tN == 4 || tN == 5)) {
 							tmpN = Number(tN - 1);
+
 							std::cin.clear();
 							std::cin.ignore(100, '\n');
 							break;

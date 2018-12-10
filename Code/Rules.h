@@ -29,10 +29,10 @@ protected://need for the implement of expertrules
 	int cardsturned = 0; 
 public:
 	Rules();
-	~Rules() {};//should work 
-	bool isValid(const Game& g);
-	bool gameOver(const Game& g);
-	bool roundOver(const Game& g);
+	virtual ~Rules() {};//should work 
+	virtual bool isValid(const Game& g);
+	virtual bool gameOver(const Game& g);
+	virtual bool roundOver(const Game& g);
 	const Player& getNextPlayer(const Game& g);
 };
 
