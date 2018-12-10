@@ -1,6 +1,9 @@
 /**
- * Projet 4 CSI 2772[A] Robert Laganiere
- *
+ * Projet CSI 2772[A] Robert Laganiere
+ * Player.h
+ * combines all information for a player including name, 
+ * side of the board (top, bottom, left or right) 
+ * and has the current count of rubies.
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
@@ -36,8 +39,9 @@ class Player {
 		bool isActive() const;//const sinon on peut pas prendre la valeur...
 		int getNRubies() const;
 		void addReward(const Reward&);
-		void setDisplayMode(bool);
+		void setDisplayMode(bool endOfGame);
 
+		//Rev 2.0
 		Side getSide() const;
 
 		friend std::ostream& operator<<(std::ostream&, const Player&);
