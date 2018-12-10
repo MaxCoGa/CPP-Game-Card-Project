@@ -1,9 +1,7 @@
 Memoarr, the board game. Implemented by Maxime & Valentin
 
 Press any key to START the game setup or 1 to how to play
-0
-
-SETUP
+1
 This game have two displays:
 0 for normal
 1 for expert
@@ -13,44 +11,42 @@ Expert display choose
 This game have two differents set of rules:
 0 for normal
 1 for expert
-0
-Normal rule choose
+1
+Expert rule choose
 
-Select number of players: 2 to 4
+Players players: 2 to 4
 2
 Enter player 1 name
-Max
+a
 Enter player 2 name
-Val
+s
 START
-
 
 ROUND 1
 
 
 
 
-
 No more cards is available.
 
-Max : Top active
-Val : Right active
+a : Top active
+s : Right active
 
-Top player Max see his three middle fronts cards
+Top player a see his three middle fronts cards
 
-yyy rrr ppp
-yCy rPr pWp
-yyy rrr ppp
+yyy yyy bbb
+yPy yTy bTb
+yyy yyy bbb
 
 A2  A3  A4
 
 Enter to continue.
 
-Right player Val see his three middle fronts cards
+Right player s see his three middle fronts cards
 
-ggg ggg ppp
-gWg gCg pOp
-ggg ggg ppp
+ppp ggg ggg
+pTp gWg gOg
+ppp ggg ggg
 
 B5  C5  D5
 
@@ -62,42 +58,106 @@ Enter to continue.
 
 No more cards is available.
 
-Max : Top active
-Val : Right active
+a : Top active
+s : Right active
 
-Max on the Top turn!
+a on the Top turn!
 Letter (A, B, C, D, E)
-A4
+A
 Number 1, 2, 3, 4, 5
-B
-1, 2, 3, 4, or 5 ONLY!
-5
+3
+Turtle:
+Next player get his turn skip!
 
-rrr
-rOr
-rrr
 
-A5
+yyy
+yTy
+yyy
 
-Max : Top active
-Val : Right active
+A3
 
-Val on the Right turn!
+a : Top active
+s : Right active
+
+a on the Top turn!
 Letter (A, B, C, D, E)
-D
+A
 Number 1, 2, 3, 4, 5
 2
+Penguin:
+current player can face down a face up card!
 
-rrr ppp
-rOr pPp
-rrr ppp
+yyy yyy
+yPy yTy
+yyy yyy
 
-A5  D2
+A2  A3
 
-Max : Top active
-Val : Right inactive
+Card to face down:
+Letter A, B, C, D, E:
+A
+Number 1, 2, 3, 4, 5:
+3
 
-Max receive 4 rubies from winning this round
+yyy
+yPy
+yyy
+
+A2
+
+a : Top active
+s : Right active
+
+s on the Right turn!
+Letter (A, B, C, D, E)
+A
+Number 1, 2, 3, 4, 5
+3
+Turtle:
+Next player get his turn skip!
+
+
+yyy yyy
+yPy yTy
+yyy yyy
+
+A2  A3
+
+a : Top active
+s : Right active
+
+s on the Right turn!
+Letter (A, B, C, D, E)
+A
+Number 1, 2, 3, 4, 5
+4
+Turtle:
+Next player get his turn skip!
+
+
+yyy yyy bbb
+yPy yTy bTb
+yyy yyy bbb
+
+A2  A3  A4
+
+a : Top active
+s : Right active
+
+s on the Right turn!
+Letter (A, B, C, D, E)
+A
+Number 1, 2, 3, 4, 5
+5
+
+yyy yyy bbb ppp
+yPy yTy bTb pWp
+yyy yyy bbb ppp
+
+A2  A3  A4  A5
+
+a : Top active
+s : Right inactive
 
 
 ROUND 2
@@ -105,102 +165,119 @@ ROUND 2
 
 
 
-
 No more cards is available.
 
-Max : Top active
-Val : Right active
+a : Top active
+s : Right active
 
-Top player Max see his three middle fronts cards
+Top player a see his three middle fronts cards
 
-yyy rrr ppp
-yCy rPr pWp
-yyy rrr ppp
+yyy yyy bbb
+yPy yTy bTb
+yyy yyy bbb
 
 A2  A3  A4
 
 Enter to continue.
-A
-Right player Val see his three middle fronts cards
 
-ggg ggg ppp
-gWg gCg pOp
-ggg ggg ppp
+Right player s see his three middle fronts cards
+
+ppp ggg ggg
+pTp gWg gOg
+ppp ggg ggg
 
 B5  C5  D5
 
 Enter to continue.
-5
+
 
 
 
 
 No more cards is available.
 
-Max : Top active
-Val : Right active
+a : Top active
+s : Right active
 
-Max on the Top turn!
-Letter (A, B, C, D, E)
-A
-Number 1, 2, 3, 4, 5
-5
-
-rrr
-rOr
-rrr
-
-A5
-
-Max : Top active
-Val : Right active
-
-Val on the Right turn!
+a on the Top turn!
 Letter (A, B, C, D, E)
 D
 Number 1, 2, 3, 4, 5
-5
+2
+Crab:
+Current player can play again!
 
-rrr ppp
-rOr pOp
-rrr ppp
 
-A5  D5
+yyy
+yCy
+yyy
 
-Max : Top active
-Val : Right active
+D2
 
-Max on the Top turn!
+a : Top active
+s : Right active
+
+a on the Top turn!
 Letter (A, B, C, D, E)
 A
 Number 1, 2, 3, 4, 5
-4
+2
+Penguin:
+current player can face down a face up card!
 
-ppp rrr ppp
-pWp rOr pOp
-ppp rrr ppp
+yyy yyy
+yPy yCy
+yyy yyy
 
-A4  A5  D5
+A2  D2
 
-Max : Top active
-Val : Right active
-
-Val on the Right turn!
-Letter (A, B, C, D, E)
-E
-Number 1, 2, 3, 4, 5
+Card to face down:
+Letter A, B, C, D, E:
+D
+Number 1, 2, 3, 4, 5:
 2
 
-ppp rrr ppp ggg
-pWp rOr pOp gTg
-ppp rrr ppp ggg
+yyy
+yPy
+yyy
 
-A4  A5  D5  E2
+A2
 
-Max : Top active
-Val : Right inactive
+a : Top active
+s : Right active
 
-Max receive 3 rubies from winning this round
+s on the Right turn!
+Letter (A, B, C, D, E)
+D
+Number 1, 2, 3, 4, 5
+2
+Crab:
+Current player can play again!
+
+
+yyy yyy
+yPy yCy
+yyy yyy
+
+A2  D2
+
+a : Top active
+s : Right active
+
+s on the Right turn!
+Letter (A, B, C, D, E)
+D
+Number 1, 2, 3, 4, 5
+3
+
+yyy yyy bbb
+yPy yCy bWb
+yyy yyy bbb
+
+A2  D2  D3
+
+a : Top active
+s : Right inactive
 
 
 ROUND 3
@@ -208,27 +285,26 @@ ROUND 3
 
 
 
-
 No more cards is available.
 
-Max : Top active
-Val : Right active
+a : Top active
+s : Right active
 
-Top player Max see his three middle fronts cards
+Top player a see his three middle fronts cards
 
-yyy rrr ppp
-yCy rPr pWp
-yyy rrr ppp
+yyy yyy bbb
+yPy yTy bTb
+yyy yyy bbb
 
 A2  A3  A4
 
 Enter to continue.
-A
-Right player Val see his three middle fronts cards
 
-ggg ggg ppp
-gWg gCg pOp
-ggg ggg ppp
+Right player s see his three middle fronts cards
+
+ppp ggg ggg
+pTp gWg gOg
+ppp ggg ggg
 
 B5  C5  D5
 
@@ -240,70 +316,53 @@ Enter to continue.
 
 No more cards is available.
 
-Max : Top active
-Val : Right active
+a : Top active
+s : Right active
 
-Max on the Top turn!
+a on the Top turn!
+Letter (A, B, C, D, E)
+D
+Number 1, 2, 3, 4, 5
+3
+Walrus:
+Current player can choose a card to block for the next turn!
+
+bbb
+bWb
+bbb
+
+D3
+
+Block a face down card:
+Letter A, B, C, D, E:
+A
+Number 1, 2, 3, 4, 5::
+4
+
+bbb
+bWb
+bbb
+
+D3
+
+a : Top active
+s : Right active
+
+s on the Right turn!
 Letter (A, B, C, D, E)
 A
 Number 1, 2, 3, 4, 5
 4
+Your card is block!!!
 
-ppp
-pWp
-ppp
+bbb bbb
+bTb bWb
+bbb bbb
 
-A4
+A4  D3
 
-Max : Top active
-Val : Right active
-
-Val on the Right turn!
-Letter (A, B, C, D, E)
-D
-Number 1, 2, 3, 4, 5
-5
-
-ppp ppp
-pWp pOp
-ppp ppp
-
-A4  D5
-
-Max : Top active
-Val : Right active
-
-Max on the Top turn!
-Letter (A, B, C, D, E)
-A
-Number 1, 2, 3, 4, 5
-1
-
-ppp ppp ppp
-pTp pWp pOp
-ppp ppp ppp
-
-A1  A4  D5
-
-Max : Top active
-Val : Right active
-
-Val on the Right turn!
-Letter (A, B, C, D, E)
-B
-Number 1, 2, 3, 4, 5
-1
-
-ppp ppp rrr ppp
-pTp pWp rCr pOp
-ppp ppp rrr ppp
-
-A1  A4  B1  D5
-
-Max : Top active
-Val : Right inactive
-
-Max receive 1 rubies from winning this round
+a : Top active
+s : Right inactive
 
 
 ROUND 4
@@ -311,27 +370,26 @@ ROUND 4
 
 
 
-
 No more cards is available.
 
-Max : Top active
-Val : Right active
+a : Top active
+s : Right active
 
-Top player Max see his three middle fronts cards
+Top player a see his three middle fronts cards
 
-yyy rrr ppp
-yCy rPr pWp
-yyy rrr ppp
+yyy yyy bbb
+yPy yTy bTb
+yyy yyy bbb
 
 A2  A3  A4
 
 Enter to continue.
 
-Right player Val see his three middle fronts cards
+Right player s see his three middle fronts cards
 
-ggg ggg ppp
-gWg gCg pOp
-ggg ggg ppp
+ppp ggg ggg
+pTp gWg gOg
+ppp ggg ggg
 
 B5  C5  D5
 
@@ -343,55 +401,41 @@ Enter to continue.
 
 No more cards is available.
 
-Max : Top active
-Val : Right active
+a : Top active
+s : Right active
 
-Max on the Top turn!
-Letter (A, B, C, D, E)
-B
-Number 1, 2, 3, 4, 5
-1
-
-rrr
-rCr
-rrr
-
-B1
-
-Max : Top active
-Val : Right active
-
-Val on the Right turn!
+a on the Top turn!
 Letter (A, B, C, D, E)
 A
 Number 1, 2, 3, 4, 5
-3
+4
+Turtle:
+Next player get his turn skip!
 
-rrr rrr
-rPr rCr
-rrr rrr
 
-A3  B1
+bbb
+bTb
+bbb
 
-Max : Top active
-Val : Right active
+A4
 
-Max on the Top turn!
+a : Top active
+s : Right active
+
+a on the Top turn!
 Letter (A, B, C, D, E)
-E
+A
 Number 1, 2, 3, 4, 5
 2
 
-rrr rrr ggg
-rPr rCr gTg
-rrr rrr ggg
+yyy bbb
+yPy bTb
+yyy bbb
 
-A3  B1  E2
+A2  A4
 
-Max : Top inactive
-Val : Right active
-
-Val receive 1 rubies from winning this round
+a : Top inactive
+s : Right active
 
 
 ROUND 5
@@ -399,27 +443,26 @@ ROUND 5
 
 
 
-
 No more cards is available.
 
-Max : Top active
-Val : Right active
+a : Top active
+s : Right active
 
-Top player Max see his three middle fronts cards
+Top player a see his three middle fronts cards
 
-yyy rrr ppp
-yCy rPr pWp
-yyy rrr ppp
+yyy yyy bbb
+yPy yTy bTb
+yyy yyy bbb
 
 A2  A3  A4
 
 Enter to continue.
 
-Right player Val see his three middle fronts cards
+Right player s see his three middle fronts cards
 
-ggg ggg ppp
-gWg gCg pOp
-ggg ggg ppp
+ppp ggg ggg
+pTp gWg gOg
+ppp ggg ggg
 
 B5  C5  D5
 
@@ -431,61 +474,59 @@ Enter to continue.
 
 No more cards is available.
 
-Max : Top active
-Val : Right active
+a : Top active
+s : Right active
 
-Val on the Right turn!
-Letter (A, B, C, D, E)
-A
-Number 1, 2, 3, 4, 5
-1
-
-ppp
-pTp
-ppp
-
-A1
-
-Max : Top active
-Val : Right active
-
-Max on the Top turn!
-Letter (A, B, C, D, E)
-E
-Number 1, 2, 3, 4, 5
-2
-
-ppp ggg
-pTp gTg
-ppp ggg
-
-A1  E2
-
-Max : Top active
-Val : Right active
-
-Val on the Right turn!
-Letter (A, B, C, D, E)
-A
-Number 1, 2, 3, 4, 5
-1
-Card is already face up.
-Val on the Right turn!
+s on the Right turn!
 Letter (A, B, C, D, E)
 A
 Number 1, 2, 3, 4, 5
 4
+Turtle:
+Next player get his turn skip!
 
-ppp ppp ggg
-pTp pWp gTg
-ppp ppp ggg
 
-A1  A4  E2
+bbb
+bTb
+bbb
 
-Max : Top active
-Val : Right inactive
+A4
 
-Max receive 2 rubies from winning this round
+a : Top active
+s : Right active
+
+s on the Right turn!
+Letter (A, B, C, D, E)
+B
+Number 1, 2, 3, 4, 5
+5
+Turtle:
+Next player get his turn skip!
+
+
+bbb ppp
+bTb pTp
+bbb ppp
+
+A4  B5
+
+a : Top active
+s : Right active
+
+s on the Right turn!
+Letter (A, B, C, D, E)
+D
+Number 1, 2, 3, 4, 5
+4
+
+bbb ppp bbb
+bTb pTp bOb
+bbb ppp bbb
+
+A4  B5  D4
+
+a : Top active
+s : Right inactive
 
 
 ROUND 6
@@ -493,27 +534,26 @@ ROUND 6
 
 
 
-
 No more cards is available.
 
-Max : Top active
-Val : Right active
+a : Top active
+s : Right active
 
-Top player Max see his three middle fronts cards
+Top player a see his three middle fronts cards
 
-yyy rrr ppp
-yCy rPr pWp
-yyy rrr ppp
+yyy yyy bbb
+yPy yTy bTb
+yyy yyy bbb
 
 A2  A3  A4
 
 Enter to continue.
 
-Right player Val see his three middle fronts cards
+Right player s see his three middle fronts cards
 
-ggg ggg ppp
-gWg gCg pOp
-ggg ggg ppp
+ppp ggg ggg
+pTp gWg gOg
+ppp ggg ggg
 
 B5  C5  D5
 
@@ -525,40 +565,59 @@ Enter to continue.
 
 No more cards is available.
 
-Max : Top active
-Val : Right active
+a : Top active
+s : Right active
 
-Max on the Top turn!
+a on the Top turn!
 Letter (A, B, C, D, E)
-A
+E
 Number 1, 2, 3, 4, 5
-1
+3
+Crab:
+Current player can play again!
 
-ppp
-pTp
-ppp
 
-A1
+ggg
+gCg
+ggg
 
-Max : Top active
-Val : Right active
+E3
 
-Val on the Right turn!
+a : Top active
+s : Right active
+
+a on the Top turn!
 Letter (A, B, C, D, E)
-A
+E
 Number 1, 2, 3, 4, 5
 2
+Crab:
+Current player can play again!
 
-ppp yyy
-pTp yCy
-ppp yyy
 
-A1  A2
+bbb ggg
+bCb gCg
+bbb ggg
 
-Max : Top active
-Val : Right inactive
+E2  E3
 
-Max receive 1 rubies from winning this round
+a : Top active
+s : Right active
+
+a on the Top turn!
+Letter (A, B, C, D, E)
+E
+Number 1, 2, 3, 4, 5
+4
+
+bbb ggg ppp
+bCb gCg pOp
+bbb ggg ppp
+
+E2  E3  E4
+
+a : Top inactive
+s : Right active
 
 
 ROUND 7
@@ -566,27 +625,26 @@ ROUND 7
 
 
 
-
 No more cards is available.
 
-Max : Top active
-Val : Right active
+a : Top active
+s : Right active
 
-Top player Max see his three middle fronts cards
+Top player a see his three middle fronts cards
 
-yyy rrr ppp
-yCy rPr pWp
-yyy rrr ppp
+yyy yyy bbb
+yPy yTy bTb
+yyy yyy bbb
 
 A2  A3  A4
 
 Enter to continue.
 
-Right player Val see his three middle fronts cards
+Right player s see his three middle fronts cards
 
-ggg ggg ppp
-gWg gCg pOp
-ggg ggg ppp
+ppp ggg ggg
+pTp gWg gOg
+ppp ggg ggg
 
 B5  C5  D5
 
@@ -598,44 +656,57 @@ Enter to continue.
 
 No more cards is available.
 
-Max : Top active
-Val : Right active
+a : Top active
+s : Right active
 
-Max on the Top turn!
+s on the Right turn!
 Letter (A, B, C, D, E)
-E
+A
+Number 1, 2, 3, 4, 5
+1
+Walrus:
+Current player can choose a card to block for the next turn!
+
+rrr
+rWr
+rrr
+
+A1
+
+Block a face down card:
+Letter A, B, C, D, E:
+A
+Number 1, 2, 3, 4, 5::
+2
+
+rrr
+rWr
+rrr
+
+A1
+
+a : Top active
+s : Right active
+
+a on the Top turn!
+Letter (A, B, C, D, E)
+A
 Number 1, 2, 3, 4, 5
 2
 
-ggg
-gTg
-ggg
+rrr yyy
+rWr yPy
+rrr yyy
 
-E2
+A1  A2
 
-Max : Top active
-Val : Right active
+a : Top inactive
+s : Right active
 
-Val on the Right turn!
-Letter (A, B, C, D, E)
-D
-Number 1, 2, 3, 4, 5
-1
-
-yyy ggg
-yWy gTg
-yyy ggg
-
-D1  E2
-
-Max : Top active
-Val : Right inactive
-
-Max receive 2 rubies from winning this round
-Game is finished
+Game Over
 Scores:
-Val : 1 rubies
+s : 5 rubies
 
-Max : 13 rubies
+a : 9 rubies
 
-The winner is Max with 13 rubies.
+The winner is a with 9 rubies.

@@ -21,6 +21,7 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 
 //#include <iomanip>//new
 //#include <windows.h>//new
@@ -52,7 +53,13 @@ print overall winner
 */
 
 void howToPlay(){
-	std::cout << "Show all the RULES TODO TODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODO" << std::endl;
+	std::string name;
+	std::ifstream dataFile("rules.txt");
+	while (!dataFile.fail() && !dataFile.eof())
+	{
+		dataFile >> name;
+		std::cout << name <<std::endl;
+	}
 }
 
 int main(){
@@ -198,22 +205,22 @@ std::cout << std::endl;
 
 
 		//number of players and names of players.
-		std::cout << "Select number of players: 2 to 4" << std::endl;
-		int numPlayers = -1;
-		int tempNumPlayers = -1;
-		while (numPlayers == -1) {
+		std::cout << "Players players: 2 to 4" << std::endl;
+		int size = -1;
+		int tmp = -1;
+		while (size == -1) {
 			//std::cout << "NUMBERS LOOP" << std::endl;
-			std::cin >> numPlayers;
-			if (!std::cin.fail() && (numPlayers > 1 && numPlayers < 5)) {
+			std::cin >> size;
+			if (!std::cin.fail() && (size > 1 && size < 5)) {
 			}
 			else {
-				std::cout << "Invalid input. Enter 2, 3, or 4 as the number of players" << std::endl;
-				numPlayers = -1;
+				std::cout << "2, 3, or 4 players only!" << std::endl;
+				size = -1;
 				std::cin.clear();
 				std::cin.ignore(100, '\n');
 			}
 		}
-		tempNumPlayers = numPlayers;
+		tmp = size;
 		for (auto &side : { top, right, bot, left }) {
 			//std::cout << "NAME LOOP" << std::endl;
 			std::cout <<"Enter player " << side + 1 << " name" << std::endl;
@@ -235,25 +242,23 @@ std::cout << std::endl;
 				//i++;
 				
 			}
-			tempNumPlayers--;
-			if (tempNumPlayers < 1) break;
+			tmp--;
+			if (tmp < 1) break;
 
 			
 		}
 
-		//TO CHANGE// MAKE IT MORE READABLE
-
-		//game start
+		/*!!!GAMEPLAY!!!*/
 		std::cout << "START" << std::endl;
 		std::cin.clear();
 		std::cin.ignore(100, '\n');
 
-		//game over loop - go through the game rounds
-		while (!rules->gameOver(*game)) {
-			std::cout << std::endl << std::endl << "ROUND " << game->getRound() + 1 << std::endl << std::endl;
+		/*GAME OVER LOOP*/
+		while (!rules->gameOver(*game)) {//GAME OVER//
+			std::cout <<  "\nROUND " << game->getRound() + 1 << std::endl;
 			board->reset();//make everything face down
 			
-			tempNumPlayers = numPlayers;//temp number
+			tmp = size;//temp number
 
 			std::cout << *game << std::endl;//show the game with all the card backsiede down
 
@@ -296,8 +301,8 @@ std::cout << std::endl;
 				board->reset();
 
 				//remove one temp player each time
-				--tempNumPlayers;
-				if (tempNumPlayers < 1) break;
+				--tmp;
+				if (tmp < 1) break;
 
 				
 				
@@ -305,8 +310,8 @@ std::cout << std::endl;
 
 			std::cout << *game << std::endl; //print the board beforegame starts
 			
-			//round over loop - go through the round until only one active player remains
-			while (!rules->roundOver(*game)) {
+			/*ROUND LOOP*/
+			while (!rules->roundOver(*game)) {//ROUND//
 				bool validCardChoice = false;
 				Player p = rules->getNextPlayer(*game);
 				Letter tmpL;
@@ -316,8 +321,8 @@ std::cout << std::endl;
 
 				// change starting side
 
-				//player chooses card by specifying letter and number, validate card choice loop
-				while (!validCardChoice) {
+				/*PLAYER TURN LOOP*/
+				while (!validCardChoice) {//TURN//
 					std::cout << p.getName() <<" on the " << sideArray[p.getSide()] << " turn!" << std::endl;
 					
 					
@@ -368,19 +373,21 @@ std::cout << std::endl;
 						}
 					}
 
-					//no card at the center
+					//INVALID POSITION AT C3
 					if (tmpL == C && tmpN == THREE) {
 						std::cout << "C3 is not a valid postition" << std::endl;
 					}
 					else {
 						Card* c = game->getCard(tmpL, tmpN);
 
-						//If valid card is choosen!!!
+						//VALID CARD
 						if (board->turnFaceUp(tmpL, tmpN)) {
 							validCardChoice = true;
 							game->setCurrentCard(c);
+
+							//IF THE CARD IS INVALID->player is now inactive for the rest of the round he lost his turn
 							if (!rules->isValid(*game)) {
-								p.setActive(false);//make the player inactive for the rest of the round
+								p.setActive(false);
 								game->addPlayer(p);
 							}
 							std::cout << std::endl << *game << std::endl;
@@ -392,24 +399,20 @@ std::cout << std::endl;
 					}
 
 
-				} //end validate card choice loop
-			} //end of round over loop
-
-
-			//put all players active
+				} //TURN//
+			} //ROUND//
+			//put all players active again
 			game->next();
-		
-
-		} //end of game loop
+		} //GAMEOVER//
 
 
 		//Game is terminated
 		//low to high
 		std::vector<Player> pl;
-		for (int i = 0; i < numPlayers; ++i) {
+		for (int i = 0; i < size; ++i) {
 			pl.push_back(rules->getNextPlayer(*game));
 		}
-		std::cout <<  "Game is finished" <<std::endl;
+		std::cout <<  "Game Over" <<std::endl;
 		std::cout << "Scores:" << std::endl;
 		while (pl.size() != 0) {
 			int temp = 0;
