@@ -17,10 +17,34 @@ private:
 	int _number;
 	//Reward(int number);
 	Reward() {};
-
+/*#if !TEST
+	Reward(int number) {
+		if (number <= 4 && number >= 1) {
+			_number = number;
+		}
+		else {
+			_number = number % 4;
+			if (_number == 0) {
+				_number = 1;
+			}
+		}
+	};
+#endif*/
 public:
-
-	Reward(int number);
+//#if TEST
+	//friend class Player;
+	Reward(int number){
+		if (number <= 4 && number >= 1) {
+			_number = number;
+		}
+		else {
+			_number = number % 4;
+			if (_number == 0) {
+				_number = 1;
+			}
+		}
+	};
+//#endif
 	Reward(const Reward&) = delete;
 	Reward& operator=(const Reward&) = delete;
 	//SOME TESTING//

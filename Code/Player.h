@@ -47,6 +47,7 @@ class Player {
 
 
 #if TEST
+
 static void test_player() {
 	std::cout << "PLAYER CLASS TEST" << std::endl;
 	Side side = top;

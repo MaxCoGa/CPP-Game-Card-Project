@@ -1,6 +1,8 @@
 /**
- * Projet 4 CSI 2772[A] Robert Laganiere
- *
+ * Projet CSI 2772[A] Robert Laganiere
+ * Card.h
+ * can take a face of one of the five possible animals and one of the five background colours.
+ * A card must also be “printable” as one string per row with the method
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
@@ -8,6 +10,7 @@
 #define CARD_H
 #include <string>
 
+/*ENUM*/
 enum FaceAnimal { Crab='C', Penguin='P', Octopus='O', Walrus='W', Turtle='T' };
 enum FaceBackground { Red='r', Green='g', Purple='p', Blue='b', Yellow='y' };//change to lowercase letter
 
@@ -55,6 +58,7 @@ public:
 		return 3;	
 	}
 
+	//REV 2.0
 	std::string operator() (const int row) const;
 
 
@@ -65,7 +69,7 @@ public:
 	operator FaceBackground() const { 
 		return _background; 
 	}
-
+	//END REV2.0
 	//void print();
 };
 

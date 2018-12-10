@@ -1,12 +1,13 @@
 /**
- * Projet 4 CSI 2772[A] Robert Laganiere
- *
+ * Projet CSI 2772[A] Robert Laganiere
+ * Card.cpp
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
 #include <iostream>
 #include "Card.h"
 
+/*The public interface of Card is to include conversion operators to type FaceAnimal and  FaceBackground*/
 std::string Card::operator() (const int row) const {
 	if (row > 2) {
 		return "";

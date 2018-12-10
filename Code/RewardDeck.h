@@ -38,8 +38,6 @@ private:
 };
 #if TEST
 #include <iostream>
-using std::cout;//REMOVE
-using std::endl;
 static void test_rewarddeck() {
 	std::cout << std::endl << "TEST REWARDDECK" << std::endl;
 	RewardDeck *rd = &RewardDeck::make_RewardDeck();
@@ -63,7 +61,7 @@ static void test_rewarddeck() {
 		std::cout << "nullptr, deck already created" << std::endl;
 	}
 	else {
-		std::cout << std::endl << "new deck existed!!! should not have WORK!!!!" << std::endl;
+		std::cout <<  "new deck existed!!! should not have WORK!!!!" << std::endl;
 	}
 }
 #endif
