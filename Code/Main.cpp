@@ -1,6 +1,6 @@
 /**
  * Projet CSI 2772[A] Robert Laganiere
- *
+ * MAIN.cpp
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
@@ -52,15 +52,6 @@ rubies
 print overall winner
 */
 
-void howToPlay(){
-	std::string name;
-	std::ifstream dataFile("rules.txt");
-	while (!dataFile.fail() && !dataFile.eof())
-	{
-		dataFile >> name;
-		std::cout << name <<std::endl;
-	}
-}
 
 int main(){
 
@@ -135,7 +126,18 @@ std::cout << std::endl;
 			std::cin >> help;
 			if (!std::cin.fail() && help == 1) {
 				std::cin.clear();
-				howToPlay();
+
+				//TEST READING FILES
+				char chars;
+				std::ifstream stream;
+				stream.open("rules.txt");
+				stream.get(chars);
+				while (!stream.eof()) {
+					std::cout << chars;
+					stream.get(chars);
+				}
+				stream.close();
+				//TEST READINF FILES END
 				break;
 			}
 			else if (std::cin.fail() || help != 1) {
