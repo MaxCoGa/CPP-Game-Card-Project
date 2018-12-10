@@ -1,12 +1,12 @@
 /**
- * Projet 4 CSI 2772[A] Robert Laganiere
- *
+ * Projet CSI 2772[A] Robert Laganiere
+ * ExpertDisplay.cpp
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
 #include "ExpertDisplay.h"
 
-
+	/*Print each cards with there position*/
     void ExpertDisplay::print(std::ostream& os) const {
 		std::string card[4]; 
 		bool up = false;
@@ -36,7 +36,7 @@
 
     }
 
-    
+    /*Reset to face down each card*/
 	void ExpertDisplay::reset() {
 		for (int i = 0; i < rows; ++i) {
 			for (int j = 0; j < cols; ++j) {
@@ -46,12 +46,14 @@
 
     }
 
+	/*Face up the card*/
 	void ExpertDisplay::faceUp(const Letter& l , const Number& n ) {
 		for (int r = l * 4; r < l * 4 + 3; ++r) {
 			Card* c = cardmatrix[l][n];
 			matrix[r].replace(n * 4 + 2, 3, c->operator() (r - l * 4));
 		}
 	}
+	/*Face down the card*/
 	void ExpertDisplay::faceDown(const Letter& l , const Number& n) {
 		for (int r = l * 4; r < l * 4 + 3; ++r) {
 			matrix[r].replace(n * 4 + 2, 3, "ZZZ");
