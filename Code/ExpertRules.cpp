@@ -1,6 +1,6 @@
 /**
- * Projet 4 CSI 2772[A] Robert Laganiere
- *
+ * Projet CSI 2772[A] Robert Laganiere
+ * ExpertRules.cpp
  * @author Maxime Cote-Gagne(8851539) & Valentin Magot(8843488)
  *
  */
