@@ -26,7 +26,7 @@ Rules::Rules()
  *Function roundOver
  *Return true is previous and current card match, by there colors or there animals, or both; false otherwise.
  */
-bool Rules::isValid(const Game& g) {
+bool Rules::isValid(const Game& g) {//Same structure should be use in ExpertRules
 	++cardsturned;
 	const Card* cc = g.getCurrentCard();//Current Card
 	const Card* pc = g.getPreviousCard();//Previous Card
